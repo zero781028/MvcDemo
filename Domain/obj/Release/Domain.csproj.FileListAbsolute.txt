@@ -1,0 +1,12 @@
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\Domain.dll.config
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\Domain.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\Domain.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\EntityFramework.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\EntityFramework.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\zh-Hant\EntityFramework.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Release\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\obj\Release\Domain.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\obj\Release\Domain.pdb

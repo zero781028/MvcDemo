@@ -1,0 +1,40 @@
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\BLL.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\BLL.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\obj\Debug\BLL.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\obj\Debug\BLL.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\BLL.dll.config
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\EntityFramework.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\EntityFramework.xml
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\AutoMapper.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\DAL.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\Domain.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\DAL.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\Domain.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\AutoMapper.xml
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\BLL\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\BLL.dll.config
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\BLL.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\BLL.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\AutoMapper.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\DAL.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\Domain.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\EntityFramework.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\PagedList.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\PagedList.Mvc.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\DAL.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\Domain.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\AutoMapper.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\EntityFramework.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\PagedList.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\PagedList.Mvc.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\obj\Debug\BLL.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\BLL\obj\Debug\BLL.pdb

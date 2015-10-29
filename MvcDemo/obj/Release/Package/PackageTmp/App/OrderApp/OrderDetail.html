@@ -1,0 +1,38 @@
+﻿<div ng-show="IsLoad" style="text-align: center">
+    <i class="fa fa-spinner fa-spin fa-3x"></i>讀取中...
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        訂單編號:{{DeliveryID}}        
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>產品編號</td>
+                    <td>產品名稱</td>
+                    <td>數量</td>
+                    <td>總價</td>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="detail in OrderDetail">
+                    <td>{{detail.DeliverySeq}}</td>
+                    <td>{{detail.ProductID}}</td>
+                    <td>{{detail.ProductName}}</td>
+                    <td>{{detail.Quantity}}</td>
+                    <td>{{detail.Amount}}</td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer">
+        總筆數:{{totalRow}}
+        <div class="btn-group pull-right">
+            <button class="btn btn-default btn-xs" ng-click="go()">
+                <i class="fa fa-reply"></i>返回
+            </button>
+        </div>
+    </div>
+</div>

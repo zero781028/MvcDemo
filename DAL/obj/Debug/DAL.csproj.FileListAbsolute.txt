@@ -1,0 +1,28 @@
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\DAL.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\DAL.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\obj\Debug\DAL.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\obj\Debug\DAL.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\DAL.dll.config
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\Domain.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\EntityFramework.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\Domain.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\EntityFramework.xml
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\DAL\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\DAL.dll.config
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\DAL.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\DAL.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\Domain.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\EntityFramework.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\Domain.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\EntityFramework.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\obj\Debug\DAL.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\DAL\obj\Debug\DAL.pdb

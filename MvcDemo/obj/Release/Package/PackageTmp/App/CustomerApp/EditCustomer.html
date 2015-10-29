@@ -1,0 +1,56 @@
+﻿<div class="col-lg-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            編輯客戶基本資料
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="CustomerID">客戶編號</label>
+                <input type="text" id="CustomerID" class="form-control" ng-model="Customer.CustomerID" />
+            </div>
+            <div class="form-group">
+                <label for="AttribName">客戶名稱(簡寫)</label>
+                <input type="text" id="AttribName" class="form-control" ng-model="Customer.AttribName" />
+            </div>
+            <div class="form-group">
+                <label for="CompanyName">客戶名稱(全寫)</label>
+                <input type="text" id="CompanyName" class="form-control" ng-model="Customer.CompanyName" />
+            </div>
+            <div class="form-group">
+                <label for="EarNo">統一編號</label>
+                <input type="text" id="EarNo" class="form-control" ng-model="Customer.EarNo" />
+            </div>
+            <div class="form-group">
+                <label for="JoinMan">聯絡人</label>
+                <input type="text" id="JoinMan" class="form-control" ng-model="Customer.JoinMan" />
+            </div>
+            <div class="form-group">
+                <label for="Tel1">電話1</label>
+                <input type="text" id="Tel1" class="form-control" ng-model="Customer.Tel1" />
+            </div>
+            <div class="form-group">
+                <label for="Tel2">電話2</label>
+                <input type="text" id="Tel2" class="form-control" ng-model="Customer.Tel2" />
+            </div>
+            <div class="form-group">
+                <label for="Fax">傳真</label>
+                <input type="text" id="Fax" class="form-control" ng-model="Customer.Fax" />
+            </div>
+            <div class="form-group">
+                <label for="MobilePhone">手機</label>
+                <input type="text" id="MobilePhone" class="form-control" ng-model="Customer.MobilePhone" />
+            </div>
+            <div class="form-group">
+                <label for="CompanyAddress">公司地址</label>
+                <input type="text" id="CompanyAddress" class="form-control" ng-model="Customer.CompanyAddress" />
+            </div>
+            <div class="form-group">
+                <label for="DeliveryAddress">運送地址</label>
+                <input type="text" id="DeliveryAddress" class="form-control" ng-model="Customer.DeliveryAddress" />
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary" ng-click="Update()"><i class="glyphicon glyphicon-ok"></i>修改</button>
+        </div>
+    </div>
+</div>

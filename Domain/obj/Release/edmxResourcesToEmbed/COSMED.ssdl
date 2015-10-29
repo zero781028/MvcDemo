@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="COSMEDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="COSMEDModelStoreContainer">
+    <EntitySet Name="BalanceExchange" EntityType="COSMEDModel.Store.BalanceExchange" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BalanceTxnHist" EntityType="COSMEDModel.Store.BalanceTxnHist" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ITEM_DEF" EntityType="COSMEDModel.Store.ITEM_DEF" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Members" EntityType="COSMEDModel.Store.Members" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TENPO" EntityType="COSMEDModel.Store.TENPO" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="BalanceExchange">
+    <Key>
+      <PropertyRef Name="MemberID" />
+      <PropertyRef Name="TXN_SN" />
+      <PropertyRef Name="SN" />
+    </Key>
+    <Property Name="MemberID" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="TXN_SN" Type="varchar" Nullable="false" MaxLength="35" />
+    <Property Name="SN" Type="int" Nullable="false" />
+    <Property Name="Reason" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="SubReason" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="ItemID" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PointDel" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="Rank" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="BalanceTxnHist">
+    <Key>
+      <PropertyRef Name="MemberID" />
+      <PropertyRef Name="TXN_SN" />
+    </Key>
+    <Property Name="MemberID" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="TXN_SN" Type="varchar" Nullable="false" MaxLength="35" />
+    <Property Name="Source" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="RegiNo" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="TradeSeqNo" Type="varchar" Nullable="false" MaxLength="9" />
+    <Property Name="Amount_add" Type="int" Nullable="false" />
+    <Property Name="Amount_del" Type="int" Nullable="false" />
+    <Property Name="Annual" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="DataDate" Type="datetime" Nullable="false" />
+    <Property Name="TxnDate" Type="datetime" Nullable="false" />
+    <Property Name="BDate" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="LastBalance" Type="int" Nullable="false" />
+    <Property Name="Balance" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="CrmFlag" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="CrmBAT" Type="datetime" />
+    <Property Name="SubTotal" Type="int" />
+    <Property Name="InvNoS" Type="varchar" MaxLength="10" />
+    <Property Name="InvNoE" Type="varchar" MaxLength="10" />
+    <Property Name="Cashier" Type="varchar" Nullable="false" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="ITEM_DEF">
+    <Key>
+      <PropertyRef Name="ITEM_BAR" />
+    </Key>
+    <Property Name="ITEM_BAR" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="SNAME" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CAT_ID" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="DataDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="OldMemberID" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="OldCardPoint" Type="int" Nullable="false" />
+    <Property Name="NewMemberID" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="NewCardPoint" Type="int" Nullable="false" />
+    <Property Name="Status" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sex" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="birthDate" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="PhoneM" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="PhoneN" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="Mobile" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="ZipCodeL" Type="varchar" MaxLength="11" />
+    <Property Name="AddressL" Type="nvarchar" MaxLength="100" />
+    <Property Name="ZipCodeC" Type="varchar" MaxLength="11" />
+    <Property Name="AddressC" Type="nvarchar" MaxLength="100" />
+    <Property Name="CareerNo" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="EduNo" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="Income" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="Children" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="Email1" Type="varchar" MaxLength="50" />
+    <Property Name="EMail2" Type="varchar" MaxLength="50" />
+    <Property Name="MemberClass" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Rank" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="AnnPromo" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="CoerPromo" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+    <Property Name="STNID" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="CreateDate" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="CreateUser" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="LastUpdate" Type="datetime" Nullable="false" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="PassChecked" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="UpdateUser" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="UpdateSTNID" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="DsplDate" Type="datetime" Nullable="false" />
+    <Property Name="CrmFlag" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="RecvMsgFlag" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="MbrMaintain" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="MbrMainDT" Type="datetime" />
+    <Property Name="MbrAgree" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="FirstDe" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TENPO">
+    <Key>
+      <PropertyRef Name="STNID" />
+    </Key>
+    <Property Name="STNID" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="STNNAME" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DST_FLAG" Type="char" MaxLength="1" />
+    <Property Name="OPEN_YMD" Type="char" MaxLength="10" />
+    <Property Name="CLOSE_YMD" Type="char" MaxLength="10" />
+    <Property Name="DST_YMD" Type="char" MaxLength="10" />
+    <Property Name="DataDate" Type="datetime" Nullable="false" />
+    <Property Name="CHIIKI_CD" Type="varchar" MaxLength="5" />
+    <Property Name="PLACE_KBN" Type="char" MaxLength="1" />
+    <Property Name="GROUP_CD" Type="char" MaxLength="3" />
+  </EntityType>
+</Schema>

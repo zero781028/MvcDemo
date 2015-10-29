@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="COSMEDModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="COSMEDEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="BalanceExchange" EntityType="COSMEDModel.BalanceExchange" />
+    <EntitySet Name="BalanceTxnHist" EntityType="COSMEDModel.BalanceTxnHist" />
+    <EntitySet Name="Members" EntityType="COSMEDModel.Members" />
+    <EntitySet Name="TENPO" EntityType="COSMEDModel.TENPO" />
+    <EntitySet Name="ITEM_DEF" EntityType="COSMEDModel.ITEM_DEF" />
+  </EntityContainer>
+  <EntityType Name="BalanceExchange">
+    <Key>
+      <PropertyRef Name="MemberID" />
+      <PropertyRef Name="TXN_SN" />
+      <PropertyRef Name="SN" />
+    </Key>
+    <Property Name="MemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="TXN_SN" Type="String" Nullable="false" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="SN" Type="Int32" Nullable="false" />
+    <Property Name="Reason" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SubReason" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ItemID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PointDel" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="Rank" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="BalanceTxnHist">
+    <Key>
+      <PropertyRef Name="MemberID" />
+      <PropertyRef Name="TXN_SN" />
+    </Key>
+    <Property Name="MemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="TXN_SN" Type="String" Nullable="false" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="Source" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="RegiNo" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="TradeSeqNo" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+    <Property Name="Amount_add" Type="Int32" Nullable="false" />
+    <Property Name="Amount_del" Type="Int32" Nullable="false" />
+    <Property Name="Annual" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+    <Property Name="DataDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TxnDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="LastBalance" Type="Int32" Nullable="false" />
+    <Property Name="Balance" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="CrmFlag" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="CrmBAT" Type="DateTime" Precision="3" />
+    <Property Name="SubTotal" Type="Int32" />
+    <Property Name="InvNoS" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="InvNoE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Cashier" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="OldMemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="OldCardPoint" Type="Int32" Nullable="false" />
+    <Property Name="NewMemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="NewCardPoint" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Sex" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="birthDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="PhoneM" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneN" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="ZipCodeL" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="AddressL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ZipCodeC" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="AddressC" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CareerNo" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="EduNo" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="Income" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="Children" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="Email1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EMail2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MemberClass" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Rank" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="AnnPromo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="CoerPromo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Remarks" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="STNID" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="CreateDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="CreateUser" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="PassChecked" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UpdateUser" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="UpdateSTNID" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="DsplDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CrmFlag" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="RecvMsgFlag" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="MbrMaintain" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="MbrMainDT" Type="DateTime" Precision="3" />
+    <Property Name="MbrAgree" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="FirstDe" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="TENPO">
+    <Key>
+      <PropertyRef Name="STNID" />
+    </Key>
+    <Property Name="STNID" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="STNNAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DST_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="OPEN_YMD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="CLOSE_YMD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="DST_YMD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="DataDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CHIIKI_CD" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="PLACE_KBN" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="GROUP_CD" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="ITEM_DEF">
+    <Key>
+      <PropertyRef Name="ITEM_BAR" />
+    </Key>
+    <Property Type="String" Name="ITEM_BAR" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SNAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CAT_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DataDate" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

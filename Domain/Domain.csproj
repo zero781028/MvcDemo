@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF40BC4C-34C6-4204-BB34-B2BE4AC51EF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BalanceExchange.cs">
+      <DependentUpon>COSMED.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BalanceTxnHist.cs">
+      <DependentUpon>COSMED.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COSMED.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COSMED.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COSMED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COSMED.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COSMED.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COSMED.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryDetails.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITEM_DEF.cs">
+      <DependentUpon>COSMED.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Members.cs">
+      <DependentUpon>COSMED.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Programs.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receipt.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptDetails.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Customer_Orders_Result.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TENPO.cs">
+      <DependentUpon>COSMED.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferDetails.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAuthority.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\ExchangeViewModel.cs" />
+    <Compile Include="ViewModels\MemberViewModel.cs" />
+    <Compile Include="ViewModels\OrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\OrderViewModel.cs" />
+    <Compile Include="ViewModels\ProductExchangeViewModel.cs" />
+    <Compile Include="ViewModels\StoreViewModel.cs" />
+    <Compile Include="XIN.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XIN.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XIN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XIN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XIN.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="XINUsers.cs">
+      <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="COSMED.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>COSMED.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="COSMED.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>COSMED.edmx</DependentUpon>
+      <LastGenOutput>COSMED.Context.cs</LastGenOutput>
+    </None>
+    <None Include="COSMED.edmx.diagram">
+      <DependentUpon>COSMED.edmx</DependentUpon>
+    </None>
+    <None Include="COSMED.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>COSMED.edmx</DependentUpon>
+      <LastGenOutput>COSMED.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="XIN.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>XIN.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="XIN.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XIN.edmx</DependentUpon>
+      <LastGenOutput>XIN.Context.cs</LastGenOutput>
+    </None>
+    <None Include="XIN.edmx.diagram">
+      <DependentUpon>XIN.edmx</DependentUpon>
+    </None>
+    <None Include="XIN.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XIN.edmx</DependentUpon>
+      <LastGenOutput>XIN.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

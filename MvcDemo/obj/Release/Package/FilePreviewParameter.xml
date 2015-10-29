@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="MvcDemo" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\jerry-wu\\Documents\\CodeProject\\MvcDemo\\MvcDemo\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\jerry-wu\\Documents\\CodeProject\\MvcDemo\\MvcDemo\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="COSMEDEntities-Web.config Connection String" description="" value="metadata=res://*/COSMED.csdl|res://*/COSMED.ssdl|res://*/COSMED.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.30.89.253;initial catalog=COSMED;persist security info=True;user id=CRM_USER;password=`1qaz2wsx;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jerry-wu\\Documents\\CodeProject\\MvcDemo\\MvcDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='COSMEDEntities']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-MvcDemo-20151008153805;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-MvcDemo-20151008153805.mdf" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jerry-wu\\Documents\\CodeProject\\MvcDemo\\MvcDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="XINConnectionString-Web.config Connection String" description="" value="Data Source=140.136.149.162;Initial Catalog=XIN;Persist Security Info=True;User ID=sa;Password=KM1175pn;MultipleActiveResultSets=True;Application Name=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jerry-wu\\Documents\\CodeProject\\MvcDemo\\MvcDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='XINConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="XINEntities-Web.config Connection String" description="" value="metadata=res://*/XIN.csdl|res://*/XIN.ssdl|res://*/XIN.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=140.136.149.162;initial catalog=XIN;persist security info=True;user id=sa;password=KM1175pn;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jerry-wu\\Documents\\CodeProject\\MvcDemo\\MvcDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='XINEntities']/@connectionString" />
+  </parameter>
+</parameters>

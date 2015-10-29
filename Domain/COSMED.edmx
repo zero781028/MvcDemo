@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="COSMEDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="COSMEDModelStoreContainer">
+          <EntitySet Name="BalanceExchange" EntityType="COSMEDModel.Store.BalanceExchange" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BalanceTxnHist" EntityType="COSMEDModel.Store.BalanceTxnHist" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ITEM_DEF" EntityType="COSMEDModel.Store.ITEM_DEF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Members" EntityType="COSMEDModel.Store.Members" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TENPO" EntityType="COSMEDModel.Store.TENPO" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="BalanceExchange">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="TXN_SN" />
+            <PropertyRef Name="SN" />
+          </Key>
+          <Property Name="MemberID" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="TXN_SN" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="SN" Type="int" Nullable="false" />
+          <Property Name="Reason" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="SubReason" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ItemID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PointDel" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="Rank" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="BalanceTxnHist">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="TXN_SN" />
+          </Key>
+          <Property Name="MemberID" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="TXN_SN" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="RegiNo" Type="varchar" Nullable="false" MaxLength="4" />
+          <Property Name="TradeSeqNo" Type="varchar" Nullable="false" MaxLength="9" />
+          <Property Name="Amount_add" Type="int" Nullable="false" />
+          <Property Name="Amount_del" Type="int" Nullable="false" />
+          <Property Name="Annual" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="DataDate" Type="datetime" Nullable="false" />
+          <Property Name="TxnDate" Type="datetime" Nullable="false" />
+          <Property Name="BDate" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="LastBalance" Type="int" Nullable="false" />
+          <Property Name="Balance" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="CrmFlag" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CrmBAT" Type="datetime" />
+          <Property Name="SubTotal" Type="int" />
+          <Property Name="InvNoS" Type="varchar" MaxLength="10" />
+          <Property Name="InvNoE" Type="varchar" MaxLength="10" />
+          <Property Name="Cashier" Type="varchar" Nullable="false" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="ITEM_DEF">
+          <Key>
+            <PropertyRef Name="ITEM_BAR" />
+          </Key>
+          <Property Name="ITEM_BAR" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="SNAME" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CAT_ID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="DataDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="OldMemberID" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="OldCardPoint" Type="int" Nullable="false" />
+          <Property Name="NewMemberID" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="NewCardPoint" Type="int" Nullable="false" />
+          <Property Name="Status" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sex" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="birthDate" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="PhoneM" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="PhoneN" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="Mobile" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="ZipCodeL" Type="varchar" MaxLength="11" />
+          <Property Name="AddressL" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZipCodeC" Type="varchar" MaxLength="11" />
+          <Property Name="AddressC" Type="nvarchar" MaxLength="100" />
+          <Property Name="CareerNo" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="EduNo" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Income" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Children" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Email1" Type="varchar" MaxLength="50" />
+          <Property Name="EMail2" Type="varchar" MaxLength="50" />
+          <Property Name="MemberClass" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Rank" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="AnnPromo" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CoerPromo" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+          <Property Name="STNID" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="CreateDate" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="CreateUser" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="LastUpdate" Type="datetime" Nullable="false" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="PassChecked" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UpdateUser" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="UpdateSTNID" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="DsplDate" Type="datetime" Nullable="false" />
+          <Property Name="CrmFlag" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="RecvMsgFlag" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="MbrMaintain" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="MbrMainDT" Type="datetime" />
+          <Property Name="MbrAgree" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="FirstDe" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TENPO">
+          <Key>
+            <PropertyRef Name="STNID" />
+          </Key>
+          <Property Name="STNID" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="STNNAME" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DST_FLAG" Type="char" MaxLength="1" />
+          <Property Name="OPEN_YMD" Type="char" MaxLength="10" />
+          <Property Name="CLOSE_YMD" Type="char" MaxLength="10" />
+          <Property Name="DST_YMD" Type="char" MaxLength="10" />
+          <Property Name="DataDate" Type="datetime" Nullable="false" />
+          <Property Name="CHIIKI_CD" Type="varchar" MaxLength="5" />
+          <Property Name="PLACE_KBN" Type="char" MaxLength="1" />
+          <Property Name="GROUP_CD" Type="char" MaxLength="3" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="COSMEDModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="COSMEDEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BalanceExchange" EntityType="COSMEDModel.BalanceExchange" />
+          <EntitySet Name="BalanceTxnHist" EntityType="COSMEDModel.BalanceTxnHist" />
+          <EntitySet Name="Members" EntityType="COSMEDModel.Members" />
+          <EntitySet Name="TENPO" EntityType="COSMEDModel.TENPO" />
+          <EntitySet Name="ITEM_DEF" EntityType="COSMEDModel.ITEM_DEF" />
+        </EntityContainer>
+        <EntityType Name="BalanceExchange">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="TXN_SN" />
+            <PropertyRef Name="SN" />
+          </Key>
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="TXN_SN" Type="String" Nullable="false" MaxLength="35" Unicode="false" FixedLength="false" />
+          <Property Name="SN" Type="Int32" Nullable="false" />
+          <Property Name="Reason" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SubReason" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ItemID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PointDel" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="Rank" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="BalanceTxnHist">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="TXN_SN" />
+          </Key>
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="TXN_SN" Type="String" Nullable="false" MaxLength="35" Unicode="false" FixedLength="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="RegiNo" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="TradeSeqNo" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="Amount_add" Type="Int32" Nullable="false" />
+          <Property Name="Amount_del" Type="Int32" Nullable="false" />
+          <Property Name="Annual" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="DataDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TxnDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="LastBalance" Type="Int32" Nullable="false" />
+          <Property Name="Balance" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="CrmFlag" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CrmBAT" Type="DateTime" Precision="3" />
+          <Property Name="SubTotal" Type="Int32" />
+          <Property Name="InvNoS" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="InvNoE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Cashier" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="OldMemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="OldCardPoint" Type="Int32" Nullable="false" />
+          <Property Name="NewMemberID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="NewCardPoint" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="birthDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="PhoneM" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneN" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="ZipCodeL" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="AddressL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ZipCodeC" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="AddressC" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CareerNo" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="EduNo" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Income" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Children" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Email1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EMail2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MemberClass" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Rank" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="AnnPromo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CoerPromo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Remarks" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="STNID" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="CreateDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="CreateUser" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="PassChecked" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UpdateUser" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateSTNID" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="DsplDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CrmFlag" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="RecvMsgFlag" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="MbrMaintain" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="MbrMainDT" Type="DateTime" Precision="3" />
+          <Property Name="MbrAgree" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="FirstDe" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="TENPO">
+          <Key>
+            <PropertyRef Name="STNID" />
+          </Key>
+          <Property Name="STNID" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="STNNAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DST_FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="OPEN_YMD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="CLOSE_YMD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="DST_YMD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="DataDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CHIIKI_CD" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="PLACE_KBN" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="GROUP_CD" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="ITEM_DEF">
+          <Key>
+            <PropertyRef Name="ITEM_BAR" />
+          </Key>
+          <Property Type="String" Name="ITEM_BAR" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SNAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataDate" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="COSMEDModelStoreContainer" CdmEntityContainer="COSMEDEntities">
+          <EntitySetMapping Name="BalanceExchange">
+            <EntityTypeMapping TypeName="COSMEDModel.BalanceExchange">
+              <MappingFragment StoreEntitySet="BalanceExchange">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="TXN_SN" ColumnName="TXN_SN" />
+                <ScalarProperty Name="SN" ColumnName="SN" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="SubReason" ColumnName="SubReason" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="PointDel" ColumnName="PointDel" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BalanceTxnHist">
+            <EntityTypeMapping TypeName="COSMEDModel.BalanceTxnHist">
+              <MappingFragment StoreEntitySet="BalanceTxnHist">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="TXN_SN" ColumnName="TXN_SN" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="RegiNo" ColumnName="RegiNo" />
+                <ScalarProperty Name="TradeSeqNo" ColumnName="TradeSeqNo" />
+                <ScalarProperty Name="Amount_add" ColumnName="Amount_add" />
+                <ScalarProperty Name="Amount_del" ColumnName="Amount_del" />
+                <ScalarProperty Name="Annual" ColumnName="Annual" />
+                <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+                <ScalarProperty Name="TxnDate" ColumnName="TxnDate" />
+                <ScalarProperty Name="BDate" ColumnName="BDate" />
+                <ScalarProperty Name="LastBalance" ColumnName="LastBalance" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="CrmFlag" ColumnName="CrmFlag" />
+                <ScalarProperty Name="CrmBAT" ColumnName="CrmBAT" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+                <ScalarProperty Name="InvNoS" ColumnName="InvNoS" />
+                <ScalarProperty Name="InvNoE" ColumnName="InvNoE" />
+                <ScalarProperty Name="Cashier" ColumnName="Cashier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="COSMEDModel.Members">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="OldMemberID" ColumnName="OldMemberID" />
+                <ScalarProperty Name="OldCardPoint" ColumnName="OldCardPoint" />
+                <ScalarProperty Name="NewMemberID" ColumnName="NewMemberID" />
+                <ScalarProperty Name="NewCardPoint" ColumnName="NewCardPoint" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="PhoneM" ColumnName="PhoneM" />
+                <ScalarProperty Name="PhoneN" ColumnName="PhoneN" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="ZipCodeL" ColumnName="ZipCodeL" />
+                <ScalarProperty Name="AddressL" ColumnName="AddressL" />
+                <ScalarProperty Name="ZipCodeC" ColumnName="ZipCodeC" />
+                <ScalarProperty Name="AddressC" ColumnName="AddressC" />
+                <ScalarProperty Name="CareerNo" ColumnName="CareerNo" />
+                <ScalarProperty Name="EduNo" ColumnName="EduNo" />
+                <ScalarProperty Name="Income" ColumnName="Income" />
+                <ScalarProperty Name="Children" ColumnName="Children" />
+                <ScalarProperty Name="Email1" ColumnName="Email1" />
+                <ScalarProperty Name="EMail2" ColumnName="EMail2" />
+                <ScalarProperty Name="MemberClass" ColumnName="MemberClass" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="AnnPromo" ColumnName="AnnPromo" />
+                <ScalarProperty Name="CoerPromo" ColumnName="CoerPromo" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="STNID" ColumnName="STNID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PassChecked" ColumnName="PassChecked" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateSTNID" ColumnName="UpdateSTNID" />
+                <ScalarProperty Name="DsplDate" ColumnName="DsplDate" />
+                <ScalarProperty Name="CrmFlag" ColumnName="CrmFlag" />
+                <ScalarProperty Name="RecvMsgFlag" ColumnName="RecvMsgFlag" />
+                <ScalarProperty Name="MbrMaintain" ColumnName="MbrMaintain" />
+                <ScalarProperty Name="MbrMainDT" ColumnName="MbrMainDT" />
+                <ScalarProperty Name="MbrAgree" ColumnName="MbrAgree" />
+                <ScalarProperty Name="FirstDe" ColumnName="FirstDe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TENPO">
+            <EntityTypeMapping TypeName="COSMEDModel.TENPO">
+              <MappingFragment StoreEntitySet="TENPO">
+                <ScalarProperty Name="STNID" ColumnName="STNID" />
+                <ScalarProperty Name="STNNAME" ColumnName="STNNAME" />
+                <ScalarProperty Name="DST_FLAG" ColumnName="DST_FLAG" />
+                <ScalarProperty Name="OPEN_YMD" ColumnName="OPEN_YMD" />
+                <ScalarProperty Name="CLOSE_YMD" ColumnName="CLOSE_YMD" />
+                <ScalarProperty Name="DST_YMD" ColumnName="DST_YMD" />
+                <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+                <ScalarProperty Name="CHIIKI_CD" ColumnName="CHIIKI_CD" />
+                <ScalarProperty Name="PLACE_KBN" ColumnName="PLACE_KBN" />
+                <ScalarProperty Name="GROUP_CD" ColumnName="GROUP_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM_DEF">
+            <EntityTypeMapping TypeName="COSMEDModel.ITEM_DEF">
+              <MappingFragment StoreEntitySet="ITEM_DEF">
+                <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+                <ScalarProperty Name="SNAME" ColumnName="SNAME" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ITEM_BAR" ColumnName="ITEM_BAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

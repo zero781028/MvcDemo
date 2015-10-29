@@ -1,0 +1,133 @@
+﻿@model List<Domain.ViewModels.ProductExchangeViewModel>
+@{
+    ViewBag.Title = "商品兌換統計查詢";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1><i class="fa fa-table"></i>商品兌換統計查詢</h1>
+    </div>
+</div>
+<hr />
+@using (Html.BeginForm("ProductExchange", "MemberExchange"))
+{
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table>
+                        <tr>
+                            <td><strong>*兌換期間:</strong></td>
+                            <td>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" id="TxtStdate" name="stdate" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" id="TxtEddate" name="eddate" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>門市:</strong></td>
+                            <td>
+                                @Html.DropDownList("STNID", (IEnumerable<SelectListItem>)ViewBag.StoreSelectList, new { @class="form-control"})
+                            </td>
+                            <td>
+                               
+                            </td>
+                        </tr>
+                        @*<tr>
+                            <td colspan="3">
+                                <div class="form-group">
+                                    <div class="input-group date" id="datepicker1">
+                                        <input type="text" class="form-control" id="TxtDatePicker" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>*@
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i>查詢</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    明細結果
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr style="text-align: center; color: #fff; background: #8091AC; font-weight: bold;">
+                                <td>商品代號</td>
+                                <td>商品名稱</td>
+                                <td>兌換數量</td>
+                                <td>兌換點數</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>@item.ItemID</td>
+                                    <td>@item.ItemName</td>
+                                    <td>@item.TotalQty</td>
+                                    <td>@item.TotalPoint</td>
+                                </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" style="text-align: center">無資料</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="panel-footer">
+                    總筆數:@if (Model != null)
+                        {
+                            Model.Count();
+                        }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#TxtStdate').datetimepicker({
+                format: 'YYYY/MM/DD'
+            });
+            $('#TxtEddate').datetimepicker({
+                format: 'YYYY/MM/DD'
+            });
+
+            $('#datepicker1').datetimepicker({
+                format: 'YYYY/MM/DD'
+            });
+
+
+        });
+    </script>
+}

@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "會員兌換明細查詢";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1><i class="fa fa-table"></i>會員兌換明細查詢</h1>
+    </div>
+</div>
+<hr />
+<div ng-app="MemApp" ng-controller="MemCtrl" class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            @*<div class="panel-heading"></div>*@
+            <div class="panel-body">
+                <table class="">
+                    <tr>
+                        <td>*兌換期間:</td>
+                        <td>
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="stdt"
+                                    is-open="status.canOpenSt" close-text="Close" ng-required="true" datepicker-options="options" readonly />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" ng-click="openSt()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>                            
+                        </td>
+                        <td>
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="eddt"
+                                    is-open="status.canOpenEd" close-text="Close" ng-required="true" datepicker-options="options" readonly />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" ng-click="openEd()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td>會員卡號:</td>
+                        <td>
+                            <input type="text" class="form-control" ng-model="memberID" ng-change="GetMember()"/>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" readonly="true" ng-model="memberName" />
+
+                        </td>                        
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-default" ng-click="StartSearch()"><i class="fa fa-search"></i>查詢</button>
+            </div>
+        </div>
+    </div>
+    <div ng-show="IsLoad" style="text-align: center" class="col-md-12">
+        <i class="fa fa-spinner fa-spin fa-3x"></i>讀取中...
+    </div>
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                明細結果
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>交易日</td>
+                            <td>會員卡號</td>
+                            <td>會員姓名</td>
+                            <td>等級</td>
+                            <td>門市代號</td>
+                            <td>門市名稱</td>
+                            <td>兌換點數</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="m in Members">
+                            <td>{{m.TxnDate | date:'yyyy/MM/dd'}}</td>
+                            <td>{{m.MemberID}}</td>
+                            <td>{{m.Name}}</td>
+                            <td>{{m.Rank}}</td>
+                            <td>{{m.Source}}</td>
+                            <td>{{m.StName}}</td>
+                            <td>{{m.Amount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <uib-pagination total-items="totalRecords" items-per-page="pageSize" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
+            </div>
+            <div class="panel-footer">
+                總筆數:{{totalRecords}}
+            </div>
+        </div>
+    </div>
+    <div style="color:red">
+        {{error}}
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        angular.module('MemApp', ['ui.bootstrap'])
+            .controller('MemCtrl', function ($scope, $http) {
+                $scope.totalRecords = 0;
+                $scope.pageSize = 10;
+                $scope.currentPage = 1;
+                $scope.format = 'yyyy/MM/dd';
+                $scope.options = {
+                    formatYear: 'YY',
+                    startingDay: 1
+                };
+                $scope.status = {
+                    canOpenSt: false,
+                    canOpenEd: false
+                };
+
+                $scope.openSt = function () {
+                    $scope.status.canOpenSt = true;
+                }
+
+                $scope.openEd = function () {
+                    $scope.status.canOpenEd = true;
+                }
+
+                $scope.pageChanged = function () {
+                    GetData();
+                }
+
+                $scope.StartSearch = function () {
+                    $scope.IsLoad = true;
+                    GetData();
+                }
+                
+                var GetData = function () {
+                    $http.get('/api/MemberExchanges', { params: { CurrentPage: $scope.currentPage, PageSize: $scope.pageSize, stdt: $scope.stdt, eddt: $scope.eddt,MemberID:$scope.memberID } })
+                    .success(function (response) {
+                        $scope.Members = response.Data;
+                        $scope.totalRecords = response.Total;
+                        $scope.IsLoad = false;
+                        $scope.error = '';
+                    })
+                    .error(function (data) {
+                        $scope.error = '取得資料錯誤';
+                        $scope.IsLoad = false;
+                    });                    
+                };
+
+                $scope.GetMember = function () {
+                    $http.get('/api/Members', { params: { MemberID: $scope.memberID } })
+                    .success(function (data) {
+                        if (data != null)
+                            $scope.memberName = data.Name;
+                        else
+                            $scope.memberName = '無此會員資料';
+                    })
+                    .error(function (data) {
+                        $scope.error = '取得資料錯誤';
+                    });
+                };
+            });
+
+    </script>
+}

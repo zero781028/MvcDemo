@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="COSMEDModelStoreContainer" CdmEntityContainer="COSMEDEntities">
+    <EntitySetMapping Name="BalanceExchange">
+      <EntityTypeMapping TypeName="COSMEDModel.BalanceExchange">
+        <MappingFragment StoreEntitySet="BalanceExchange">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="TXN_SN" ColumnName="TXN_SN" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="SubReason" ColumnName="SubReason" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="PointDel" ColumnName="PointDel" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BalanceTxnHist">
+      <EntityTypeMapping TypeName="COSMEDModel.BalanceTxnHist">
+        <MappingFragment StoreEntitySet="BalanceTxnHist">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="TXN_SN" ColumnName="TXN_SN" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="RegiNo" ColumnName="RegiNo" />
+          <ScalarProperty Name="TradeSeqNo" ColumnName="TradeSeqNo" />
+          <ScalarProperty Name="Amount_add" ColumnName="Amount_add" />
+          <ScalarProperty Name="Amount_del" ColumnName="Amount_del" />
+          <ScalarProperty Name="Annual" ColumnName="Annual" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="TxnDate" ColumnName="TxnDate" />
+          <ScalarProperty Name="BDate" ColumnName="BDate" />
+          <ScalarProperty Name="LastBalance" ColumnName="LastBalance" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CrmFlag" ColumnName="CrmFlag" />
+          <ScalarProperty Name="CrmBAT" ColumnName="CrmBAT" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="InvNoS" ColumnName="InvNoS" />
+          <ScalarProperty Name="InvNoE" ColumnName="InvNoE" />
+          <ScalarProperty Name="Cashier" ColumnName="Cashier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="COSMEDModel.Members">
+        <MappingFragment StoreEntitySet="Members">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="OldMemberID" ColumnName="OldMemberID" />
+          <ScalarProperty Name="OldCardPoint" ColumnName="OldCardPoint" />
+          <ScalarProperty Name="NewMemberID" ColumnName="NewMemberID" />
+          <ScalarProperty Name="NewCardPoint" ColumnName="NewCardPoint" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="PhoneM" ColumnName="PhoneM" />
+          <ScalarProperty Name="PhoneN" ColumnName="PhoneN" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="ZipCodeL" ColumnName="ZipCodeL" />
+          <ScalarProperty Name="AddressL" ColumnName="AddressL" />
+          <ScalarProperty Name="ZipCodeC" ColumnName="ZipCodeC" />
+          <ScalarProperty Name="AddressC" ColumnName="AddressC" />
+          <ScalarProperty Name="CareerNo" ColumnName="CareerNo" />
+          <ScalarProperty Name="EduNo" ColumnName="EduNo" />
+          <ScalarProperty Name="Income" ColumnName="Income" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Email1" ColumnName="Email1" />
+          <ScalarProperty Name="EMail2" ColumnName="EMail2" />
+          <ScalarProperty Name="MemberClass" ColumnName="MemberClass" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="AnnPromo" ColumnName="AnnPromo" />
+          <ScalarProperty Name="CoerPromo" ColumnName="CoerPromo" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="STNID" ColumnName="STNID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PassChecked" ColumnName="PassChecked" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateSTNID" ColumnName="UpdateSTNID" />
+          <ScalarProperty Name="DsplDate" ColumnName="DsplDate" />
+          <ScalarProperty Name="CrmFlag" ColumnName="CrmFlag" />
+          <ScalarProperty Name="RecvMsgFlag" ColumnName="RecvMsgFlag" />
+          <ScalarProperty Name="MbrMaintain" ColumnName="MbrMaintain" />
+          <ScalarProperty Name="MbrMainDT" ColumnName="MbrMainDT" />
+          <ScalarProperty Name="MbrAgree" ColumnName="MbrAgree" />
+          <ScalarProperty Name="FirstDe" ColumnName="FirstDe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TENPO">
+      <EntityTypeMapping TypeName="COSMEDModel.TENPO">
+        <MappingFragment StoreEntitySet="TENPO">
+          <ScalarProperty Name="STNID" ColumnName="STNID" />
+          <ScalarProperty Name="STNNAME" ColumnName="STNNAME" />
+          <ScalarProperty Name="DST_FLAG" ColumnName="DST_FLAG" />
+          <ScalarProperty Name="OPEN_YMD" ColumnName="OPEN_YMD" />
+          <ScalarProperty Name="CLOSE_YMD" ColumnName="CLOSE_YMD" />
+          <ScalarProperty Name="DST_YMD" ColumnName="DST_YMD" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="CHIIKI_CD" ColumnName="CHIIKI_CD" />
+          <ScalarProperty Name="PLACE_KBN" ColumnName="PLACE_KBN" />
+          <ScalarProperty Name="GROUP_CD" ColumnName="GROUP_CD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEM_DEF">
+      <EntityTypeMapping TypeName="COSMEDModel.ITEM_DEF">
+        <MappingFragment StoreEntitySet="ITEM_DEF">
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+          <ScalarProperty Name="SNAME" ColumnName="SNAME" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ITEM_BAR" ColumnName="ITEM_BAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

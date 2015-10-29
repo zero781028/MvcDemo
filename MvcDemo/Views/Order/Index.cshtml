@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="MainApp">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1><i class="fa fa-tasks"></i>訂單資料</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="pull-right">
+            <a class="btn btn-sm btn-success" href="Order/Export?type=excel">
+                <i class="fa fa-file-excel-o fa-lg"></i>Excel
+            </a>
+            <a class="btn btn-sm btn-danger" href="Order/Export?type=pdf">
+                <i class="fa fa-file-pdf-o fa-lg"></i>PDF
+            </a>
+            <a class="btn btn-sm btn-info" href="Order/Export?type=word">
+                <i class="fa fa-file-word-o fa-lg"></i>Word
+            </a>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-lg-12">
+            <div ng-view style="margin-top: 10px;"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\MvcDemo.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\MvcDemo.pdb
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\Antlr3.Runtime.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\EntityFramework.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\Microsoft.Web.Infrastructure.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\Newtonsoft.Json.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Net.Http.Formatting.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Http.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Http.WebHost.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Mvc.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Optimization.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Providers.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Razor.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.WebPages.Deployment.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.WebPages.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.WebPages.Razor.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\WebGrease.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\EntityFramework.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\Newtonsoft.Json.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Net.Http.Formatting.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Http.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Http.WebHost.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Mvc.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.Razor.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.WebPages.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.WebPages.Deployment.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\System.Web.WebPages.Razor.xml
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\EntityFramework.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Http.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Mvc.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Optimization.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Providers.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Razor.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.WebPages.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\obj\Debug\MvcDemo.dll
+c:\users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\obj\Debug\MvcDemo.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\obj\Debug\MvcDemo.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\BLL.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\DAL.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\Domain.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\AutoMapper.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\BLL.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\DAL.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\Domain.pdb
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\AutoMapper.xml
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\EntityFramework.SqlServer.dll
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\EntityFramework.SqlServer.xml
+C:\Users\user\documents\visual studio 2012\Projects\MvcDemo\MvcDemo\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\MvcDemo.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\MvcDemo.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\Antlr3.Runtime.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\BLL.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\DAL.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\Domain.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\EntityFramework.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\EntityFramework.SqlServer.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\Newtonsoft.Json.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Net.Http.Formatting.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Http.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Http.WebHost.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Mvc.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Optimization.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Providers.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Razor.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.WebPages.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.WebPages.Razor.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\WebGrease.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\AutoMapper.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\PagedList.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\BLL.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\DAL.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\Domain.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\EntityFramework.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\EntityFramework.SqlServer.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\Newtonsoft.Json.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Net.Http.Formatting.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Http.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Http.WebHost.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Mvc.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.Razor.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.WebPages.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\System.Web.WebPages.Razor.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\AutoMapper.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\PagedList.xml
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Providers.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\obj\Debug\MvcDemo.csprojResolveAssemblyReference.cache
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\obj\Debug\RdlCompile.cache
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\obj\Debug\RdlCompile.compiled
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\obj\Debug\MvcDemo.dll
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\MvcDemo\obj\Debug\MvcDemo.pdb
