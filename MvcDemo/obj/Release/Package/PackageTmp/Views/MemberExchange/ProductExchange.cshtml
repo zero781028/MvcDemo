@@ -10,7 +10,7 @@
     </div>
 </div>
 <hr />
-@using (Html.BeginForm("ProductExchange", "MemberExchange"))
+@using (Html.BeginForm("ProductExchange", "MemberExchange", FormMethod.Post, new { id="form1"}))
 {
     <div class="row">
         <div class="col-lg-6">
@@ -21,7 +21,7 @@
                             <td><strong>*兌換期間:</strong></td>
                             <td>
                                 <p class="input-group">
-                                    <input type="text" class="form-control" id="TxtStdate" name="stdate" />
+                                    <input type="text" class="form-control required dateISO" id="TxtStdate" name="stdate" />
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
                                     </span>
@@ -29,7 +29,7 @@
                             </td>
                             <td>
                                 <p class="input-group">
-                                    <input type="text" class="form-control" id="TxtEddate" name="eddate" />
+                                    <input type="text" class="form-control required dateISO" id="TxtEddate" name="eddate" />
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
                                     </span>
@@ -39,7 +39,7 @@
                         <tr>
                             <td><strong>門市:</strong></td>
                             <td>
-                                @Html.DropDownList("STNID", (IEnumerable<SelectListItem>)ViewBag.StoreSelectList, new { @class="form-control"})
+                                @Html.DropDownList("STNID", (IEnumerable<SelectListItem>)ViewBag.StoreSelectList, new { @class = "form-control" })
                             </td>
                             <td>
                                
@@ -116,6 +116,8 @@
 @section scripts{
     <script>
         $(document).ready(function () {
+            $('#form1').validate();
+
             $('#TxtStdate').datetimepicker({
                 format: 'YYYY/MM/DD'
             });

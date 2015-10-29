@@ -60,5 +60,17 @@ namespace MvcDemo.Controllers
             
             return View(model);            
         }
+
+        public ActionResult MemberExchangeMonth()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult MemberExchangeMonth(string stmonth,string edmonth)
+        {
+
+            return View();
+        }
     }
 }
