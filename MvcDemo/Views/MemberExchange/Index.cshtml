@@ -89,7 +89,7 @@
                             <td>{{m.StName}}</td>
                             <td>{{m.Amount}}</td>
                             <td>
-                                <button type="button" class="btn btn-outline btn-info" ng-click="toggleModal()">瀏覽明細</button>
+                                <button type="button" class="btn btn-outline btn-info" ng-click="toggleModal(m.MemberID,m.Txn_SN)">瀏覽明細</button>
                             </td>
                         </tr>
                     </tbody>
@@ -123,15 +123,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr ng-repeat="d in details">
+                                <td>{{d.SN}}</td>
+                                <td>{{d.Reason}}</td>
                                 <td>1</td>
-                                <td>兌換商品-加價購</td>
-                                <td>1</td>
-                                <td>4005808819225</td>
-                                <td>妮維雅控油洗面乳50G</td>
-                                <td>普卡</td>
-                                <td>10</td>
-                                <td>1</td>
+                                <td>{{d.ItemID}}</td>
+                                <td>{{d.ItemName}}</td>
+                                <td>{{d.Rank}}</td>
+                                <td>{{d.Price}}</td>
+                                <td>{{d.Qty}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -203,8 +203,14 @@
                 };
 
                 $scope.showModal = false;
-                $scope.toggleModal = function () {
-                    $scope.showModal = !$scope.showModal;
+                $scope.toggleModal = function (memberId, txn_SN) {
+                    $http.get('/api/ExchangeDetails', { params: { MemberID: memberId, Txn_SN: txn_SN } })
+                    .success(function (data) {
+                        $scope.details = data;
+                        $scope.showModal = !$scope.showModal;
+                    })
+                    .error(function (data) {
+                    });                    
                 };
             }).directive('modal', function () {
                 return {
