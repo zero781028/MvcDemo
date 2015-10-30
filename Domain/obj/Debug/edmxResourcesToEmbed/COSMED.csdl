@@ -6,6 +6,7 @@
     <EntitySet Name="Members" EntityType="COSMEDModel.Members" />
     <EntitySet Name="TENPO" EntityType="COSMEDModel.TENPO" />
     <EntitySet Name="ITEM_DEF" EntityType="COSMEDModel.ITEM_DEF" />
+    <EntitySet Name="CDTBL" EntityType="COSMEDModel.CDTBL" />
   </EntityContainer>
   <EntityType Name="BalanceExchange">
     <Key>
@@ -121,5 +122,19 @@
     <Property Type="String" Name="SNAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="CAT_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="DataDate" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="CDTBL">
+    <Key>
+      <PropertyRef Name="CCODE" />
+      <PropertyRef Name="CITEM" />
+      <PropertyRef Name="SUBITEM" />
+    </Key>
+    <Property Type="String" Name="CCODE" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="CITEM" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SUBITEM" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CNAME" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CNOTE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="UPDT" Nullable="false" Precision="0" />
+    <Property Type="String" Name="UPUSER" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

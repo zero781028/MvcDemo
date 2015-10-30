@@ -3,6 +3,7 @@
   <EntityContainer Name="COSMEDModelStoreContainer">
     <EntitySet Name="BalanceExchange" EntityType="COSMEDModel.Store.BalanceExchange" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="BalanceTxnHist" EntityType="COSMEDModel.Store.BalanceTxnHist" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CDTBL" EntityType="COSMEDModel.Store.CDTBL" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ITEM_DEF" EntityType="COSMEDModel.Store.ITEM_DEF" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Members" EntityType="COSMEDModel.Store.Members" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TENPO" EntityType="COSMEDModel.Store.TENPO" store:Type="Tables" Schema="dbo" />
@@ -49,6 +50,20 @@
     <Property Name="InvNoS" Type="varchar" MaxLength="10" />
     <Property Name="InvNoE" Type="varchar" MaxLength="10" />
     <Property Name="Cashier" Type="varchar" Nullable="false" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="CDTBL">
+    <Key>
+      <PropertyRef Name="CCODE" />
+      <PropertyRef Name="CITEM" />
+      <PropertyRef Name="SUBITEM" />
+    </Key>
+    <Property Name="CCODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="CITEM" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="SUBITEM" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="CNAME" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="CNOTE" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="UPDT" Type="smalldatetime" Nullable="false" />
+    <Property Name="UPUSER" Type="varchar" Nullable="false" MaxLength="10" />
   </EntityType>
   <EntityType Name="ITEM_DEF">
     <Key>

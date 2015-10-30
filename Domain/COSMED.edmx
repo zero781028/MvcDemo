@@ -8,6 +8,7 @@
         <EntityContainer Name="COSMEDModelStoreContainer">
           <EntitySet Name="BalanceExchange" EntityType="COSMEDModel.Store.BalanceExchange" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="BalanceTxnHist" EntityType="COSMEDModel.Store.BalanceTxnHist" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CDTBL" EntityType="COSMEDModel.Store.CDTBL" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ITEM_DEF" EntityType="COSMEDModel.Store.ITEM_DEF" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Members" EntityType="COSMEDModel.Store.Members" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TENPO" EntityType="COSMEDModel.Store.TENPO" store:Type="Tables" Schema="dbo" />
@@ -54,6 +55,20 @@
           <Property Name="InvNoS" Type="varchar" MaxLength="10" />
           <Property Name="InvNoE" Type="varchar" MaxLength="10" />
           <Property Name="Cashier" Type="varchar" Nullable="false" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="CDTBL">
+          <Key>
+            <PropertyRef Name="CCODE" />
+            <PropertyRef Name="CITEM" />
+            <PropertyRef Name="SUBITEM" />
+          </Key>
+          <Property Name="CCODE" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="CITEM" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="SUBITEM" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="CNAME" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="CNOTE" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UPDT" Type="smalldatetime" Nullable="false" />
+          <Property Name="UPUSER" Type="varchar" Nullable="false" MaxLength="10" />
         </EntityType>
         <EntityType Name="ITEM_DEF">
           <Key>
@@ -137,6 +152,7 @@
           <EntitySet Name="Members" EntityType="COSMEDModel.Members" />
           <EntitySet Name="TENPO" EntityType="COSMEDModel.TENPO" />
           <EntitySet Name="ITEM_DEF" EntityType="COSMEDModel.ITEM_DEF" />
+          <EntitySet Name="CDTBL" EntityType="COSMEDModel.CDTBL" />
         </EntityContainer>
         <EntityType Name="BalanceExchange">
           <Key>
@@ -252,6 +268,20 @@
           <Property Type="String" Name="SNAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="CAT_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="DataDate" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="CDTBL">
+          <Key>
+            <PropertyRef Name="CCODE" />
+            <PropertyRef Name="CITEM" />
+            <PropertyRef Name="SUBITEM" />
+          </Key>
+          <Property Type="String" Name="CCODE" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CITEM" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SUBITEM" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CNAME" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CNOTE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UPDT" Nullable="false" Precision="0" />
+          <Property Type="String" Name="UPUSER" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -373,6 +403,19 @@
                 <ScalarProperty Name="SNAME" ColumnName="SNAME" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="ITEM_BAR" ColumnName="ITEM_BAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CDTBL">
+            <EntityTypeMapping TypeName="COSMEDModel.CDTBL">
+              <MappingFragment StoreEntitySet="CDTBL">
+                <ScalarProperty Name="UPUSER" ColumnName="UPUSER" />
+                <ScalarProperty Name="UPDT" ColumnName="UPDT" />
+                <ScalarProperty Name="CNOTE" ColumnName="CNOTE" />
+                <ScalarProperty Name="CNAME" ColumnName="CNAME" />
+                <ScalarProperty Name="SUBITEM" ColumnName="SUBITEM" />
+                <ScalarProperty Name="CITEM" ColumnName="CITEM" />
+                <ScalarProperty Name="CCODE" ColumnName="CCODE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

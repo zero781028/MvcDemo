@@ -30,5 +30,6 @@ namespace Domain
         public DbSet<Members> Members { get; set; }
         public DbSet<TENPO> TENPO { get; set; }
         public DbSet<ITEM_DEF> ITEM_DEF { get; set; }
+        public DbSet<CDTBL> CDTBL { get; set; }
     }
 }

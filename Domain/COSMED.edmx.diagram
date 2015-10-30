@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="COSMEDModel.Members" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="COSMEDModel.TENPO" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="COSMEDModel.ITEM_DEF" Width="1.5" PointX="5.7327579565964442" PointY="21.387636969512158" />
+        <EntityTypeShape EntityType="COSMEDModel.CDTBL" Width="1.5" PointX="5.8394697205347335" PointY="17.26796268730795" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
