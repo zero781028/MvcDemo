@@ -118,5 +118,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CDTBL">
+      <EntityTypeMapping TypeName="COSMEDModel.CDTBL">
+        <MappingFragment StoreEntitySet="CDTBL">
+          <ScalarProperty Name="UPUSER" ColumnName="UPUSER" />
+          <ScalarProperty Name="UPDT" ColumnName="UPDT" />
+          <ScalarProperty Name="CNOTE" ColumnName="CNOTE" />
+          <ScalarProperty Name="CNAME" ColumnName="CNAME" />
+          <ScalarProperty Name="SUBITEM" ColumnName="SUBITEM" />
+          <ScalarProperty Name="CITEM" ColumnName="CITEM" />
+          <ScalarProperty Name="CCODE" ColumnName="CCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

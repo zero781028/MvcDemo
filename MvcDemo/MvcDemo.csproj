@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\CustomersController.cs" />
+    <Compile Include="API\ExchangeDetailsController.cs" />
     <Compile Include="API\MemberExchangesController.cs" />
     <Compile Include="API\MembersController.cs" />
     <Compile Include="API\OrdersController.cs" />

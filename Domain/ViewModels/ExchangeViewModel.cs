@@ -9,6 +9,7 @@ namespace Domain.ViewModels
     public class ExchangeViewModel
     {
         public string MemberID { get; set; }
+        public string Txn_SN { get; set; }
         public string Name { get; set; }
         public string Rank { get; set; }
         public string StName { get; set; }

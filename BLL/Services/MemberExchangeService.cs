@@ -70,6 +70,7 @@ namespace BLL.Services
                          select new
                          {
                              Member = A.MemberID,
+                             Txn_SN=A.TXN_SN,
                              TxnDate = A.TxnDate,
                              Amount = A.Amount_del,
                              Name = M.Name,
@@ -92,12 +93,13 @@ namespace BLL.Services
                 model = new ExchangeViewModel()
                 {
                     MemberID = item.Member,
+                    Txn_SN=item.Txn_SN,
                     TxnDate = item.TxnDate,
                     Amount = item.Amount,
                     Rank = item.Rank,
                     StName = item.StName,
                     Name = item.Name,
-                    Source = item.Source
+                    Source = item.Source                   
                 };
                 ls.Add(model);
             }
@@ -162,6 +164,48 @@ namespace BLL.Services
             }
 
             return ls;
+        }
+
+        public List<ExchangeDetailViewModel> GetExchangeDetails(string MemberID,string Txn_SN)
+        {
+            List<ExchangeDetailViewModel> list = new List<ExchangeDetailViewModel>();
+
+            var query = (from A in db.BalanceExchange
+                        join B in db.BalanceTxnHist on new { MemberID = A.MemberID, Txn_SN = A.TXN_SN } equals new { MemberID = B.MemberID, Txn_SN = B.TXN_SN }
+                        join I in db.ITEM_DEF on A.ItemID equals I.ITEM_BAR
+                        join C in db.CDTBL on new { Reason = A.Reason, SubReason = A.SubReason } equals new { Reason=C.CITEM,SubReason=C.SUBITEM}
+                        where A.MemberID==MemberID
+                        where A.TXN_SN == Txn_SN
+                        where C.CCODE=="01"
+                        select new
+                        {
+                            MemberID = A.MemberID,
+                            Txn_SN = A.TXN_SN,
+                            SN = A.SN,
+                            ItemID = A.ItemID,
+                            ItemName = I.SNAME,
+                            Rank = A.Rank=="1"?"金卡":"普卡",
+                            Price = A.Price,
+                            Qty = A.Qty
+                        }).ToList();
+
+            foreach (var item in query)
+            {
+                ExchangeDetailViewModel model = new ExchangeDetailViewModel()
+                {
+                    MemberID=item.MemberID,
+                    Txn_SN=item.Txn_SN,
+                    SN=item.SN,
+                    ItemID=item.ItemID,
+                    ItemName=item.ItemName,
+                    Rank=item.Rank,
+                    Price=item.Price,
+                    Qty=item.Qty
+                };
+                list.Add(model);
+            }
+
+            return list;
         }
     }
 }
