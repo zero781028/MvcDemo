@@ -57,6 +57,9 @@
     <Compile Include="BalanceTxnHist.cs">
       <DependentUpon>COSMED.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDTBL.cs">
+      <DependentUpon>COSMED.tt</DependentUpon>
+    </Compile>
     <Compile Include="COSMED.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +122,7 @@
       <DependentUpon>XIN.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\ExchangeDetailViewModel.cs" />
     <Compile Include="ViewModels\ExchangeViewModel.cs" />
     <Compile Include="ViewModels\MemberViewModel.cs" />
     <Compile Include="ViewModels\OrderDetailViewModel.cs" />
