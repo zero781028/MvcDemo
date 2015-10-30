@@ -11,47 +11,51 @@
 <hr />
 <div ng-app="MemApp" ng-controller="MemCtrl" class="row">
     <div class="col-lg-6">
-        <div class="panel panel-default">
-            @*<div class="panel-heading"></div>*@
-            <div class="panel-body">
-                <table class="">
-                    <tr>
-                        <td>*兌換期間:</td>
-                        <td>
-                            <p class="input-group">
-                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="stdt"
-                                    is-open="status.canOpenSt" close-text="Close" ng-required="true" datepicker-options="options" readonly />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" ng-click="openSt()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>                            
-                        </td>
-                        <td>
-                            <p class="input-group">
-                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="eddt"
-                                    is-open="status.canOpenEd" close-text="Close" ng-required="true" datepicker-options="options" readonly />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" ng-click="openEd()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>
-                        </td>                        
-                    </tr>
-                    <tr>
-                        <td>會員卡號:</td>
-                        <td>
-                            <input type="text" class="form-control" ng-model="memberID" ng-change="GetMember()"/>
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" readonly="true" ng-model="memberName" />
+        <form name="queryForm">
+            <div class="panel panel-default">
+                @*<div class="panel-heading"></div>*@
+                <div class="panel-body">
+                    <table class="">
+                        <tr>
+                            <td>*兌換期間:</td>
+                            <td>
+                                <p class="input-group">
+                                    <input type="text" name="txtStdt" class="form-control" uib-datepicker-popup="{{format}}" ng-model="stdt"
+                                        is-open="status.canOpenSt" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" ng-click="openSt()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                    <span ng-show="queryForm.txtStdt.$error.required && queryForm.txtStdt.$dirty">請輸入起始日期</span>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="input-group">
+                                    <input type="text" name="txtEddt" class="form-control" uib-datepicker-popup="{{format}}" ng-model="eddt"
+                                        is-open="status.canOpenEd" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" ng-click="openEd()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                    <span ng-show="queryForm.txtEddt.$error.required && queryForm.txtEddt.$dirty">請輸入起始日期</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>會員卡號:</td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="memberID" ng-change="GetMember()" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" readonly="true" ng-model="memberName" />
 
-                        </td>                        
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default" ng-click="StartSearch()" ng-disabled="queryForm.$invalid"><i class="fa fa-search"></i>查詢</button>
+                </div>
             </div>
-            <div class="panel-footer">
-                <button class="btn btn-default" ng-click="StartSearch()"><i class="fa fa-search"></i>查詢</button>
-            </div>
-        </div>
+        </form>
     </div>
     <div ng-show="IsLoad" style="text-align: center" class="col-md-12">
         <i class="fa fa-spinner fa-spin fa-3x"></i>讀取中...
@@ -93,7 +97,7 @@
             </div>
         </div>
     </div>
-    <div style="color:red">
+    <div style="color: red">
         {{error}}
     </div>
 </div>
@@ -131,9 +135,9 @@
                     $scope.IsLoad = true;
                     GetData();
                 }
-                
+
                 var GetData = function () {
-                    $http.get('/api/MemberExchanges', { params: { CurrentPage: $scope.currentPage, PageSize: $scope.pageSize, stdt: $scope.stdt, eddt: $scope.eddt,MemberID:$scope.memberID } })
+                    $http.get('/api/MemberExchanges', { params: { CurrentPage: $scope.currentPage, PageSize: $scope.pageSize, stdt: $scope.stdt, eddt: $scope.eddt, MemberID: $scope.memberID } })
                     .success(function (response) {
                         $scope.Members = response.Data;
                         $scope.totalRecords = response.Total;
@@ -143,7 +147,7 @@
                     .error(function (data) {
                         $scope.error = '取得資料錯誤';
                         $scope.IsLoad = false;
-                    });                    
+                    });
                 };
 
                 $scope.GetMember = function () {
