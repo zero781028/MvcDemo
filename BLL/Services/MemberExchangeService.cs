@@ -70,6 +70,7 @@ namespace BLL.Services
                          select new
                          {
                              Member = A.MemberID,
+                             Txn_SN=A.TXN_SN,
                              TxnDate = A.TxnDate,
                              Amount = A.Amount_del,
                              Name = M.Name,
@@ -92,12 +93,13 @@ namespace BLL.Services
                 model = new ExchangeViewModel()
                 {
                     MemberID = item.Member,
+                    Txn_SN=item.Txn_SN,
                     TxnDate = item.TxnDate,
                     Amount = item.Amount,
                     Rank = item.Rank,
                     StName = item.StName,
                     Name = item.Name,
-                    Source = item.Source
+                    Source = item.Source                   
                 };
                 ls.Add(model);
             }
