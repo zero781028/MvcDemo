@@ -11,47 +11,51 @@
 <hr />
 <div ng-app="MemApp" ng-controller="MemCtrl" class="row">
     <div class="col-lg-6">
-        <div class="panel panel-default">
-            @*<div class="panel-heading"></div>*@
-            <div class="panel-body">
-                <table class="">
-                    <tr>
-                        <td>*兌換期間:</td>
-                        <td>
-                            <p class="input-group">
-                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="stdt"
-                                    is-open="status.canOpenSt" close-text="Close" ng-required="true" datepicker-options="options" readonly />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" ng-click="openSt()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>                            
-                        </td>
-                        <td>
-                            <p class="input-group">
-                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="eddt"
-                                    is-open="status.canOpenEd" close-text="Close" ng-required="true" datepicker-options="options" readonly />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" ng-click="openEd()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>
-                        </td>                        
-                    </tr>
-                    <tr>
-                        <td>會員卡號:</td>
-                        <td>
-                            <input type="text" class="form-control" ng-model="memberID" ng-change="GetMember()"/>
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" readonly="true" ng-model="memberName" />
+        <form name="queryForm">
+            <div class="panel panel-default">
+                @*<div class="panel-heading"></div>*@
+                <div class="panel-body">
+                    <table class="">
+                        <tr>
+                            <td>*兌換期間:</td>
+                            <td>
+                                <p class="input-group">
+                                    <input type="text" name="txtStdt" class="form-control" uib-datepicker-popup="{{format}}" ng-model="stdt"
+                                        is-open="status.canOpenSt" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" ng-click="openSt()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                    <span ng-show="queryForm.txtStdt.$error.required && queryForm.txtStdt.$dirty">請輸入起始日期</span>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="input-group">
+                                    <input type="text" name="txtEddt" class="form-control" uib-datepicker-popup="{{format}}" ng-model="eddt"
+                                        is-open="status.canOpenEd" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" ng-click="openEd()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                    <span ng-show="queryForm.txtEddt.$error.required && queryForm.txtEddt.$dirty">請輸入起始日期</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>會員卡號:</td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="memberID" ng-change="GetMember()" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" readonly="true" ng-model="memberName" />
 
-                        </td>                        
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default" ng-click="StartSearch()" ng-disabled="queryForm.$invalid"><i class="fa fa-search"></i>查詢</button>
+                </div>
             </div>
-            <div class="panel-footer">
-                <button class="btn btn-default" ng-click="StartSearch()"><i class="fa fa-search"></i>查詢</button>
-            </div>
-        </div>
+        </form>
     </div>
     <div ng-show="IsLoad" style="text-align: center" class="col-md-12">
         <i class="fa fa-spinner fa-spin fa-3x"></i>讀取中...
@@ -72,6 +76,7 @@
                             <td>門市代號</td>
                             <td>門市名稱</td>
                             <td>兌換點數</td>
+                            <td>兌換明細</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,6 +88,9 @@
                             <td>{{m.Source}}</td>
                             <td>{{m.StName}}</td>
                             <td>{{m.Amount}}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline btn-info" ng-click="toggleModal(m.MemberID,m.Txn_SN)">瀏覽明細</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -93,15 +101,50 @@
             </div>
         </div>
     </div>
-    <div style="color:red">
+    <div style="color: red">
         {{error}}
     </div>
+    <modal title="Detail" visible="showModal">
+        <div class="panel panel-info">
+            <div class="panel-heading">會員單次兌換明細</div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>序號</td>
+                                <td>類型</td>
+                                <td>兌換點數</td>
+                                <td>商品代號</td>
+                                <td>商品名稱</td>
+                                <td>卡別</td>
+                                <td>金額</td>
+                                <td>數量</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="d in details">
+                                <td>{{d.SN}}</td>
+                                <td>{{d.Reason}}</td>
+                                <td>1</td>
+                                <td>{{d.ItemID}}</td>
+                                <td>{{d.ItemName}}</td>
+                                <td>{{d.Rank}}</td>
+                                <td>{{d.Price}}</td>
+                                <td>{{d.Qty}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </modal>
 </div>
 
 @section scripts{
     <script>
         angular.module('MemApp', ['ui.bootstrap'])
-            .controller('MemCtrl', function ($scope, $http) {
+            .controller('MemCtrl', function ($scope, $http, $uibModal) {
                 $scope.totalRecords = 0;
                 $scope.pageSize = 10;
                 $scope.currentPage = 1;
@@ -131,9 +174,9 @@
                     $scope.IsLoad = true;
                     GetData();
                 }
-                
+
                 var GetData = function () {
-                    $http.get('/api/MemberExchanges', { params: { CurrentPage: $scope.currentPage, PageSize: $scope.pageSize, stdt: $scope.stdt, eddt: $scope.eddt,MemberID:$scope.memberID } })
+                    $http.get('/api/MemberExchanges', { params: { CurrentPage: $scope.currentPage, PageSize: $scope.pageSize, stdt: $scope.stdt, eddt: $scope.eddt, MemberID: $scope.memberID } })
                     .success(function (response) {
                         $scope.Members = response.Data;
                         $scope.totalRecords = response.Total;
@@ -143,7 +186,7 @@
                     .error(function (data) {
                         $scope.error = '取得資料錯誤';
                         $scope.IsLoad = false;
-                    });                    
+                    });
                 };
 
                 $scope.GetMember = function () {
@@ -158,7 +201,58 @@
                         $scope.error = '取得資料錯誤';
                     });
                 };
-            });
+
+                $scope.showModal = false;
+                $scope.toggleModal = function (memberId, txn_SN) {
+                    $http.get('/api/ExchangeDetails', { params: { MemberID: memberId, Txn_SN: txn_SN } })
+                    .success(function (data) {
+                        $scope.details = data;
+                        $scope.showModal = !$scope.showModal;
+                    })
+                    .error(function (data) {
+                    });                    
+                };
+            }).directive('modal', function () {
+                return {
+                    template: '<div class="modal fade">' +
+                        '<div class="modal-dialog modal-lg">' +
+                          '<div class="modal-content">' +
+                            '<div class="modal-header">' +
+                              '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+                              '<h4 class="modal-title">{{ title }}</h4>' +
+                            '</div>' +
+                            '<div class="modal-body" ng-transclude></div>' +
+                          '</div>' +
+                        '</div>' +
+                      '</div>',
+                    restrict: 'E',
+                    transclude: true,
+                    replace: true,
+                    scope: true,
+                    link: function postLink(scope, element, attrs) {
+                        scope.title = attrs.title;
+
+                        scope.$watch(attrs.visible, function (value) {
+                            if (value == true)
+                                $(element).modal('show');
+                            else
+                                $(element).modal('hide');
+                        });
+
+                        $(element).on('shown.bs.modal', function () {
+                            scope.$apply(function () {
+                                scope.$parent[attrs.visible] = true;
+                            });
+                        });
+
+                        $(element).on('hidden.bs.modal', function () {
+                            scope.$apply(function () {
+                                scope.$parent[attrs.visible] = false;
+                            });
+                        });
+                    }
+                };
+            });;
 
     </script>
 }
