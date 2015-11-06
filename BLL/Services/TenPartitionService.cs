@@ -22,12 +22,12 @@ namespace BLL.Services
         /// <returns></returns>
         public List<TenPartitionAnalysisViewModel> GetTenPartitionAnalysis()
         {
-            DateTime st = Convert.ToDateTime("2015/07/01");
-            DateTime ed = Convert.ToDateTime("2015/07/31");
+            string st = "2015/07/01";
+            string ed = "2015/07/31";
             int s = 1;
 
             var query1 = (from A in db.STA_DAILY_ITEM_CTGRY_MBR_E
-                         where Convert.ToDateTime(A.TRAN_DATE) >= st && Convert.ToDateTime(A.TRAN_DATE) <= ed
+                         where A.TRAN_DATE.CompareTo(st)>=0 && A.TRAN_DATE.CompareTo(ed)<=0
                          group A by A.MBR_ID into grp
                          select new
                          {
