@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="COSMED_CRMModelStoreContainer" CdmEntityContainer="COSMED_CRMEntities">
+    <EntitySetMapping Name="STA_DAILY_ITEM_CTGRY_MBR_E">
+      <EntityTypeMapping TypeName="COSMED_CRMModel.STA_DAILY_ITEM_CTGRY_MBR_E">
+        <MappingFragment StoreEntitySet="STA_DAILY_ITEM_CTGRY_MBR_E">
+          <ScalarProperty Name="CORP_CD" ColumnName="CORP_CD" />
+          <ScalarProperty Name="MBR_ID" ColumnName="MBR_ID" />
+          <ScalarProperty Name="TRAN_DATE" ColumnName="TRAN_DATE" />
+          <ScalarProperty Name="BCAT_CD" ColumnName="BCAT_CD" />
+          <ScalarProperty Name="MCAT_CD" ColumnName="MCAT_CD" />
+          <ScalarProperty Name="SCAT_CD" ColumnName="SCAT_CD" />
+          <ScalarProperty Name="TCAT_CD" ColumnName="TCAT_CD" />
+          <ScalarProperty Name="CORP_NAME" ColumnName="CORP_NAME" />
+          <ScalarProperty Name="BCAT_NAME" ColumnName="BCAT_NAME" />
+          <ScalarProperty Name="MCAT_NAME" ColumnName="MCAT_NAME" />
+          <ScalarProperty Name="SCAT_NAME" ColumnName="SCAT_NAME" />
+          <ScalarProperty Name="TCAT_NAME" ColumnName="TCAT_NAME" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="MARRIAGE" ColumnName="MARRIAGE" />
+          <ScalarProperty Name="CHILD" ColumnName="CHILD" />
+          <ScalarProperty Name="VOCATION" ColumnName="VOCATION" />
+          <ScalarProperty Name="PURCHASE_CNT" ColumnName="PURCHASE_CNT" />
+          <ScalarProperty Name="PURCHASE_PRICE" ColumnName="PURCHASE_PRICE" />
+          <ScalarProperty Name="PURCHASE_QTY" ColumnName="PURCHASE_QTY" />
+          <ScalarProperty Name="BCAT_FCD" ColumnName="BCAT_FCD" />
+          <ScalarProperty Name="MCAT_FCD" ColumnName="MCAT_FCD" />
+          <ScalarProperty Name="SCAT_FCD" ColumnName="SCAT_FCD" />
+          <ScalarProperty Name="TCAT_FCD" ColumnName="TCAT_FCD" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

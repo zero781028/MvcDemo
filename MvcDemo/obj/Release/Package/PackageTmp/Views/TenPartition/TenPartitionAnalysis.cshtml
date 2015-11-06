@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "十等份分析";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h1 style="font-family:'Arial Unicode MS'"><i class="fa fa-table"></i>十等份分析</h1>
+</div>
+<hr />
+<div ng-app="TenPartitionApp" ng-controller="TenPartitionCtrl" class="row">
+    <!--查詢條件區-->
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-default" ng-click="StartSearch()"><i class="fa fa-search"></i>查詢</button>
+            </div>
+        </div>
+    </div>
+    <div ng-show="IsLoad" style="text-align: center" class="col-md-12">
+        <i class="fa fa-spinner fa-spin fa-3x"></i>讀取中...
+    </div>
+    <!--查詢結果區-->
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">十等份分析表</div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>銷售金額</td>
+                        <td>構成比</td>
+                        <td>平均購買數量</td>
+                        <td>平均交易次數</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in datas">
+                        <td>{{$index+1}}</td>
+                        <td>{{item.Price}}</td>
+                        <td>{{item.TTotalPrice}}</td>
+                        <td>{{item.TTotalQty}}</td>
+                        <td>{{item.TTotalCnt}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            合計:
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var app = angular.module('TenPartitionApp', ['ui.bootstrap']);
+        app.controller('TenPartitionCtrl', function ($scope, $http) {
+            $scope.IsLoad = false;
+
+            $scope.StartSearch = function () {
+                $scope.IsLoad = true;
+                GetData();
+            };
+            var GetData = function () {
+                $scope.IsLoad = true;
+                
+                $http.get('/api/TenPartitionAnalysis')
+                .success(function (data) {
+                    $scope.IsLoad = false;
+                    $scope.datas = data;
+                })
+                .error(function () {
+                    $scope.IsLoad = false;
+                    $scope.error = '取得資料錯誤';
+                });
+            };
+        });
+    </script>
+}

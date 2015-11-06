@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="COSMED_CRMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="COSMED_CRMEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="STA_DAILY_ITEM_CTGRY_MBR_E" EntityType="COSMED_CRMModel.STA_DAILY_ITEM_CTGRY_MBR_E" />
+  </EntityContainer>
+  <EntityType Name="STA_DAILY_ITEM_CTGRY_MBR_E">
+    <Key>
+      <PropertyRef Name="CORP_CD" />
+      <PropertyRef Name="MBR_ID" />
+      <PropertyRef Name="TRAN_DATE" />
+      <PropertyRef Name="BCAT_CD" />
+      <PropertyRef Name="MCAT_CD" />
+      <PropertyRef Name="SCAT_CD" />
+      <PropertyRef Name="TCAT_CD" />
+    </Key>
+    <Property Name="CORP_CD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="MBR_ID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="TRAN_DATE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="BCAT_CD" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="MCAT_CD" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="SCAT_CD" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="TCAT_CD" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="CORP_NAME" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="BCAT_NAME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="MCAT_NAME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="SCAT_NAME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="TCAT_NAME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="AGE" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+    <Property Name="MARRIAGE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="CHILD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="VOCATION" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="PURCHASE_CNT" Type="Int64" />
+    <Property Name="PURCHASE_PRICE" Type="Int64" />
+    <Property Name="PURCHASE_QTY" Type="Int64" />
+    <Property Name="BCAT_FCD" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+    <Property Name="MCAT_FCD" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+    <Property Name="SCAT_FCD" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+    <Property Name="TCAT_FCD" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+    <Property Name="GENDER" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+  </EntityType>
+</Schema>
