@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="COSMED_CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="COSMED_CRMModelStoreContainer">
+    <EntitySet Name="STA_DAILY_ITEM_CTGRY_MBR_E" EntityType="COSMED_CRMModel.Store.STA_DAILY_ITEM_CTGRY_MBR_E" store:Type="Tables" Schema="crmschema" />
+  </EntityContainer>
+  <EntityType Name="STA_DAILY_ITEM_CTGRY_MBR_E">
+    <Key>
+      <PropertyRef Name="CORP_CD" />
+      <PropertyRef Name="MBR_ID" />
+      <PropertyRef Name="TRAN_DATE" />
+      <PropertyRef Name="BCAT_CD" />
+      <PropertyRef Name="MCAT_CD" />
+      <PropertyRef Name="SCAT_CD" />
+      <PropertyRef Name="TCAT_CD" />
+    </Key>
+    <Property Name="CORP_CD" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="MBR_ID" Type="char" Nullable="false" MaxLength="13" />
+    <Property Name="TRAN_DATE" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="BCAT_CD" Type="char" Nullable="false" MaxLength="6" />
+    <Property Name="MCAT_CD" Type="char" Nullable="false" MaxLength="6" />
+    <Property Name="SCAT_CD" Type="char" Nullable="false" MaxLength="6" />
+    <Property Name="TCAT_CD" Type="char" Nullable="false" MaxLength="6" />
+    <Property Name="CORP_NAME" Type="nvarchar" MaxLength="30" />
+    <Property Name="BCAT_NAME" Type="nvarchar" MaxLength="20" />
+    <Property Name="MCAT_NAME" Type="nvarchar" MaxLength="20" />
+    <Property Name="SCAT_NAME" Type="nvarchar" MaxLength="20" />
+    <Property Name="TCAT_NAME" Type="nvarchar" MaxLength="20" />
+    <Property Name="AGE" Type="char" MaxLength="4" />
+    <Property Name="MARRIAGE" Type="char" MaxLength="1" />
+    <Property Name="CHILD" Type="char" MaxLength="1" />
+    <Property Name="VOCATION" Type="char" MaxLength="2" />
+    <Property Name="PURCHASE_CNT" Type="bigint" />
+    <Property Name="PURCHASE_PRICE" Type="bigint" />
+    <Property Name="PURCHASE_QTY" Type="bigint" />
+    <Property Name="BCAT_FCD" Type="varchar" MaxLength="24" />
+    <Property Name="MCAT_FCD" Type="varchar" MaxLength="24" />
+    <Property Name="SCAT_FCD" Type="varchar" MaxLength="24" />
+    <Property Name="TCAT_FCD" Type="varchar" MaxLength="24" />
+    <Property Name="GENDER" Type="char" MaxLength="1" />
+  </EntityType>
+</Schema>

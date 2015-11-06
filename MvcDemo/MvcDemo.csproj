@@ -150,6 +150,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberExchangeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\TenPartitionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1177,6 +1178,7 @@
     <Content Include="Views\MemberExchange\Index.cshtml" />
     <Content Include="Views\MemberExchange\ProductExchange.cshtml" />
     <Content Include="Views\MemberExchange\MemberExchangeMonth.cshtml" />
+    <Content Include="Views\TenPartition\TenPartitionAnalysis.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
