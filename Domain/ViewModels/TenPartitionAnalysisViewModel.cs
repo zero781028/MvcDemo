@@ -8,9 +8,9 @@ namespace Domain.ViewModels
 {
     public class TenPartitionAnalysisViewModel
     {
-        public int Price { get; set; }
-        public float TTotalPrice { get; set; }
-        public float TTotalCnt { get; set; }
-        public float TTotalQty { get; set; }
+        public long Price { get; set; }
+        public double TTotalPrice { get; set; }
+        public double TTotalCnt { get; set; }
+        public double TTotalQty { get; set; }
     }
 }

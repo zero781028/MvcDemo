@@ -21,3 +21,4 @@ C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Debug\zh-Hant\EntityF
 C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\obj\Debug\Domain.dll
 C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\obj\Debug\Domain.pdb
+C:\Users\jerry-wu\Documents\CodeProject\MvcDemo\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
