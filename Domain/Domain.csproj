@@ -147,6 +147,7 @@
     <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\ProductExchangeViewModel.cs" />
     <Compile Include="ViewModels\StoreViewModel.cs" />
+    <Compile Include="ViewModels\TenPartitionAnalysisViewModel.cs" />
     <Compile Include="XIN.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
