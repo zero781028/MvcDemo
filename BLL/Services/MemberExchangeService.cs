@@ -108,6 +108,51 @@ namespace BLL.Services
         }
 
         /// <summary>
+        /// 查詢會員兌換月別明細
+        /// </summary>
+        /// <param name="stYM">起始年月YYYYMM</param>
+        /// <param name="edYM">結束年月YYYYMM</param>
+        /// <param name="pointS"></param>
+        /// <param name="pointE"></param>
+        public void GetExchangeMonth(string stYM,string edYM,int pointS,int pointE)
+        {
+            DateTime stdt=Convert.ToDateTime(stYM);
+            DateTime eddt=Convert.ToDateTime(edYM);
+            var list=new List<string>(){"1","2"};
+
+            var q = from B in db.BalanceTxnHist
+                    join A in db.BalanceExchange on new { memberID = B.MemberID, txn_sn = B.TXN_SN } equals new { memberID = A.MemberID, txn_sn = A.TXN_SN }
+                    join M in db.Members on B.MemberID equals M.MemberID
+                    where B.TxnDate >= stdt && B.TxnDate <= eddt
+                    where list.Contains(A.SubReason)
+                    group new
+                    {
+                        B.TxnDate,
+                        B.TXN_SN,
+                        B.MemberID,
+                        M.Name,
+                        B.Amount_del
+                    } by new
+                    {
+                        B.TxnDate,
+                        B.TXN_SN,
+                        B.MemberID,
+                        M.Name
+                    } into grp
+                    where grp.Sum(x => x.Amount_del) >= pointS && grp.Sum(x => x.Amount_del) <= pointE
+                    select new
+                    {
+                        TxnDate = grp.Key.TxnDate,
+                        Txn_sn = grp.Key.TXN_SN,
+                        MemberID = grp.Key.MemberID,
+                        Name = grp.Key.Name,
+                        Amount=grp.Sum(t=>t.Amount_del)
+                    };
+            q = q.OrderBy(o => o.TxnDate);
+
+        }
+
+        /// <summary>
         /// 查詢日期區間的商品兌換統計
         /// </summary>
         /// <param name="STNID">門市編號</param>

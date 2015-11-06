@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="COSMED_CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="COSMED_CRMModelStoreContainer">
+          <EntitySet Name="STA_DAILY_ITEM_CTGRY_MBR_E" EntityType="COSMED_CRMModel.Store.STA_DAILY_ITEM_CTGRY_MBR_E" store:Type="Tables" Schema="crmschema" />
+        </EntityContainer>
+        <EntityType Name="STA_DAILY_ITEM_CTGRY_MBR_E">
+          <Key>
+            <PropertyRef Name="CORP_CD" />
+            <PropertyRef Name="MBR_ID" />
+            <PropertyRef Name="TRAN_DATE" />
+            <PropertyRef Name="BCAT_CD" />
+            <PropertyRef Name="MCAT_CD" />
+            <PropertyRef Name="SCAT_CD" />
+            <PropertyRef Name="TCAT_CD" />
+          </Key>
+          <Property Name="CORP_CD" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="MBR_ID" Type="char" Nullable="false" MaxLength="13" />
+          <Property Name="TRAN_DATE" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="BCAT_CD" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="MCAT_CD" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="SCAT_CD" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="TCAT_CD" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="CORP_NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="BCAT_NAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="MCAT_NAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="SCAT_NAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="TCAT_NAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="AGE" Type="char" MaxLength="4" />
+          <Property Name="MARRIAGE" Type="char" MaxLength="1" />
+          <Property Name="CHILD" Type="char" MaxLength="1" />
+          <Property Name="VOCATION" Type="char" MaxLength="2" />
+          <Property Name="PURCHASE_CNT" Type="bigint" />
+          <Property Name="PURCHASE_PRICE" Type="bigint" />
+          <Property Name="PURCHASE_QTY" Type="bigint" />
+          <Property Name="BCAT_FCD" Type="varchar" MaxLength="24" />
+          <Property Name="MCAT_FCD" Type="varchar" MaxLength="24" />
+          <Property Name="SCAT_FCD" Type="varchar" MaxLength="24" />
+          <Property Name="TCAT_FCD" Type="varchar" MaxLength="24" />
+          <Property Name="GENDER" Type="char" MaxLength="1" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="COSMED_CRMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="COSMED_CRMEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="STA_DAILY_ITEM_CTGRY_MBR_E" EntityType="COSMED_CRMModel.STA_DAILY_ITEM_CTGRY_MBR_E" />
+        </EntityContainer>
+        <EntityType Name="STA_DAILY_ITEM_CTGRY_MBR_E">
+          <Key>
+            <PropertyRef Name="CORP_CD" />
+            <PropertyRef Name="MBR_ID" />
+            <PropertyRef Name="TRAN_DATE" />
+            <PropertyRef Name="BCAT_CD" />
+            <PropertyRef Name="MCAT_CD" />
+            <PropertyRef Name="SCAT_CD" />
+            <PropertyRef Name="TCAT_CD" />
+          </Key>
+          <Property Name="CORP_CD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="MBR_ID" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="true" />
+          <Property Name="TRAN_DATE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="BCAT_CD" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="MCAT_CD" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="SCAT_CD" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="TCAT_CD" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="CORP_NAME" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="BCAT_NAME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="MCAT_NAME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="SCAT_NAME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="TCAT_NAME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="AGE" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="MARRIAGE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CHILD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="VOCATION" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="PURCHASE_CNT" Type="Int64" />
+          <Property Name="PURCHASE_PRICE" Type="Int64" />
+          <Property Name="PURCHASE_QTY" Type="Int64" />
+          <Property Name="BCAT_FCD" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="MCAT_FCD" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="SCAT_FCD" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="TCAT_FCD" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="GENDER" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="COSMED_CRMModelStoreContainer" CdmEntityContainer="COSMED_CRMEntities">
+          <EntitySetMapping Name="STA_DAILY_ITEM_CTGRY_MBR_E">
+            <EntityTypeMapping TypeName="COSMED_CRMModel.STA_DAILY_ITEM_CTGRY_MBR_E">
+              <MappingFragment StoreEntitySet="STA_DAILY_ITEM_CTGRY_MBR_E">
+                <ScalarProperty Name="CORP_CD" ColumnName="CORP_CD" />
+                <ScalarProperty Name="MBR_ID" ColumnName="MBR_ID" />
+                <ScalarProperty Name="TRAN_DATE" ColumnName="TRAN_DATE" />
+                <ScalarProperty Name="BCAT_CD" ColumnName="BCAT_CD" />
+                <ScalarProperty Name="MCAT_CD" ColumnName="MCAT_CD" />
+                <ScalarProperty Name="SCAT_CD" ColumnName="SCAT_CD" />
+                <ScalarProperty Name="TCAT_CD" ColumnName="TCAT_CD" />
+                <ScalarProperty Name="CORP_NAME" ColumnName="CORP_NAME" />
+                <ScalarProperty Name="BCAT_NAME" ColumnName="BCAT_NAME" />
+                <ScalarProperty Name="MCAT_NAME" ColumnName="MCAT_NAME" />
+                <ScalarProperty Name="SCAT_NAME" ColumnName="SCAT_NAME" />
+                <ScalarProperty Name="TCAT_NAME" ColumnName="TCAT_NAME" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="MARRIAGE" ColumnName="MARRIAGE" />
+                <ScalarProperty Name="CHILD" ColumnName="CHILD" />
+                <ScalarProperty Name="VOCATION" ColumnName="VOCATION" />
+                <ScalarProperty Name="PURCHASE_CNT" ColumnName="PURCHASE_CNT" />
+                <ScalarProperty Name="PURCHASE_PRICE" ColumnName="PURCHASE_PRICE" />
+                <ScalarProperty Name="PURCHASE_QTY" ColumnName="PURCHASE_QTY" />
+                <ScalarProperty Name="BCAT_FCD" ColumnName="BCAT_FCD" />
+                <ScalarProperty Name="MCAT_FCD" ColumnName="MCAT_FCD" />
+                <ScalarProperty Name="SCAT_FCD" ColumnName="SCAT_FCD" />
+                <ScalarProperty Name="TCAT_FCD" ColumnName="TCAT_FCD" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

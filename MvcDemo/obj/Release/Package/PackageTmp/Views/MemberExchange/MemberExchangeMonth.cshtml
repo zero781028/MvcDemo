@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "MemberExchangeMonth";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1><i class="fa fa-table"></i>商品兌換月別查詢</h1>
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table>
+                    <tr>
+                        <td><strong>*兌換期間:</strong></td>
+                        <td>                            
+                            <div class="input-group date" id="DivStdt">
+                                <input type="text" class="form-control" id="TxtStYM" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group date" id="DivEddt">
+                                <input type="text" class="form-control" id="TxtEdYM" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>會員卡號:</strong></td>
+                        <td>
+                            <input type="text" id="TxtMemberID" class="form-control" />
+                        </td>
+                        <td>
+                            <label id="LblMemberName"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>點數區間:</strong></td>
+                        <td>
+                            <input type="text" id="TxtPointS" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="number" id="TxtPointE" class="form-control" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-default" type="button" id="BtnQuery"><i class="fa fa-search"></i>查詢</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                明細結果
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped table-bordered table-hover" id="TblResult">
+                    <thead>
+                        <tr style="text-align: center; color: #fff; background: #8091AC; font-weight: bold;">
+                            <td>年月別</td>
+                            <td>會員卡號</td>
+                            <td>姓名</td>
+                            <td>等級</td>
+                            <td>兌換總點數</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="panel-footer">
+                總筆數:
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(function () {
+            $('#DivStdt').datetimepicker({
+                format: 'YYYY/MM'
+            });
+            $('#DivEddt').datetimepicker({
+                format: 'YYYY/MM'
+            });
+
+            $('#TxtMemberID').change(function () {
+                $.getJSON('/api/Members', { MemberID: $('#TxtMemberID').val() }, function (data) {
+                    if (data != null && data.Name != '')
+                        $('#LblMemberName').text(data.Name);
+                    else
+                        $('#LblMemberName').text('查無此會員資料');
+                });
+            });
+            $('#BtnQuery').click(function () {
+                var datas = {
+                    stYM: $('#TxtStYM').val(),
+                    edYM: $('#TxtEdYM').val(),
+                    pointS: $('#TxtPointS').val(),
+                    pointE: $('#TxtPointE').val()
+                };
+                                
+                $.getJSON('/api/MemberExchangeMonth', datas, function (data) {
+                    var html = '';
+                    if (data.length > 0) {
+                        html = '<tbody>';
+                        for (var i = 0; i < datas.length; i++) {
+                            html += '<tr>' +
+                                '<td>'+data[i].TxnDate+'</td>' +
+                                '<td>'+data[i].MemberID+'</td>' +
+                                '<td>'+data[i].Name+'</td>' +
+                                '<td>'+data[i].Rank+'</td>' +
+                                '<td>'+data[i].Amount+'</td>' +
+                                '</tr>';
+                        }
+                        html += '</tbody>';
+                    }
+                    else {
+                        html = '<tbody>' +
+                            '<tr><td colspan="5">查無資料</td><tr/>' +
+                            '</tbody>';                        
+                    }
+                    $('#TblResult').append(html);
+                });
+            });
+        });
+    </script>
+}
