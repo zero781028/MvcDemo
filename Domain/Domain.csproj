@@ -75,6 +75,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>COSMED.edmx</DependentUpon>
     </Compile>
+    <Compile Include="COSMEDCRM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COSMEDCRM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COSMEDCRM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COSMEDCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COSMEDCRM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COSMEDCRM.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>XIN.tt</DependentUpon>
     </Compile>
@@ -105,6 +120,9 @@
     </Compile>
     <Compile Include="sp_Customer_Orders_Result.cs">
       <DependentUpon>XIN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STA_DAILY_ITEM_CTGRY_MBR_E.cs">
+      <DependentUpon>COSMEDCRM.tt</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
       <DependentUpon>XIN.tt</DependentUpon>
@@ -166,6 +184,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>COSMED.edmx</DependentUpon>
       <LastGenOutput>COSMED.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="COSMEDCRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>COSMEDCRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="COSMEDCRM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>COSMEDCRM.edmx</DependentUpon>
+      <LastGenOutput>COSMEDCRM.Context.cs</LastGenOutput>
+    </None>
+    <None Include="COSMEDCRM.edmx.diagram">
+      <DependentUpon>COSMEDCRM.edmx</DependentUpon>
+    </None>
+    <None Include="COSMEDCRM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>COSMEDCRM.edmx</DependentUpon>
+      <LastGenOutput>COSMEDCRM.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <EntityDeploy Include="XIN.edmx">
