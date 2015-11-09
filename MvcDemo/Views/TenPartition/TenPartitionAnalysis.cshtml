@@ -67,7 +67,7 @@
                 <tbody>
                     <tr ng-repeat="item in datas">
                         <td>{{$index+1}}</td>
-                        <td>{{item.Price | currency}}</td>
+                        <td>{{item.Price | currency:"$":0}}</td>
                         <td>{{item.TTotalPrice | percentage:2}}</td>
                         <td>{{item.TTotalQty}}</td>
                         <td>{{item.TTotalCnt}}</td>
