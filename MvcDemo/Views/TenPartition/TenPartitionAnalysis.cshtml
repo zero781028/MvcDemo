@@ -20,7 +20,7 @@
                         <label class="sr-only" for="txtStdt"></label>
                         <div class="input-group">
                             <input type="text" name="txtStdt" class="form-control" uib-datepicker-popup="{{format}}" ng-model="stdt"
-                                        is-open="status.canOpenSt" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
+                                is-open="status.canOpenSt" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
                             <span class="input-group-btn">
                                 <button class="btn" type="button" ng-click="openSt()"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
@@ -31,7 +31,7 @@
                         <label class="sr-only" for="txtEddt"></label>
                         <div class="input-group">
                             <input type="text" name="txtEddt" class="form-control" uib-datepicker-popup="{{format}}" ng-model="eddt"
-                                        is-open="status.canOpenEd" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
+                                is-open="status.canOpenEd" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
                             <span class="input-group-btn">
                                 <button class="btn" type="button" ng-click="openEd()"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
@@ -79,11 +79,21 @@
             合計:
         </div>
     </div>
+    <!--圖表區-->
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">分析圖表</div>
+            <div class="panel-body">
+                <div google-chart chart="chartObject" style="height:600px;width:100%"></div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 @section scripts{
     <script>
-        var app = angular.module('TenPartitionApp', ['ui.bootstrap']);
+        var app = angular.module('TenPartitionApp', ['ui.bootstrap', 'googlechart']);
         app.controller('TenPartitionCtrl', function ($scope, $http) {
             $scope.IsLoad = false;
             $scope.format = 'yyyy/MM/dd';
@@ -111,16 +121,40 @@
             var GetData = function () {
                 $scope.IsLoad = true;
 
-                $http.get('/api/TenPartitionAnalysis', { params: {stdt:$scope.stdt,eddt:$scope.eddt}})
-                .success(function (data) {
+                $http.get('/api/TenPartitionAnalysis', { params: { stdt: $scope.stdt, eddt: $scope.eddt } })
+                .success(function (response) {
                     $scope.IsLoad = false;
-                    $scope.datas = data;
+                    $scope.datas = response;
+                    SetChart();
                 })
                 .error(function () {
                     $scope.IsLoad = false;
                     $scope.error = '取得資料錯誤';
                 });
             };
+
+            var SetChart = function () {
+                $scope.chartObject = {};
+                $scope.chartObject.type = "PieChart";
+                $scope.chartDatas = [];
+
+                angular.forEach($scope.datas, function (value, key) {
+                    $scope.chartDatas.push({
+                        c: [
+                            { v: key+1 },
+                            { v: value.Price }
+                        ]
+                    });
+                });
+
+                $scope.chartObject.data = {
+                    "cols": [
+                        { id: "t", label: "Topping", type: "string" },
+                        { id: "s", label: "Slices", type: "number" }
+                    ], "rows": $scope.chartDatas
+                };
+            };
+                        
         });
         app.filter('percentage', ['$filter', function ($filter) {
             return function (input, decimal) {
