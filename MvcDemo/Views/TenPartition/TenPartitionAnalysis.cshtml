@@ -4,7 +4,7 @@
 }
 
 <div class="row">
-    <h1 style="font-family:'Arial Unicode MS'"><i class="fa fa-table"></i>十等份分析</h1>
+    <h1 style="font-family: 'Arial Unicode MS'"><i class="fa fa-table"></i>十等份分析</h1>
 </div>
 <hr />
 <div ng-app="TenPartitionApp" ng-controller="TenPartitionCtrl" class="row">
@@ -12,10 +12,36 @@
     <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-body">
-
+                <form class="form-inline" role="form" name="queryForm">
+                    <div class="form-group">
+                        <label>起訖日期:</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="txtStdt"></label>
+                        <div class="input-group">
+                            <input type="text" name="txtStdt" class="form-control" uib-datepicker-popup="{{format}}" ng-model="stdt"
+                                is-open="status.canOpenSt" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
+                            <span class="input-group-btn">
+                                <button class="btn" type="button" ng-click="openSt()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                            <span ng-show="queryForm.txtStdt.$error.required && queryForm.txtStdt.$dirty">請輸入起始日期</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="txtEddt"></label>
+                        <div class="input-group">
+                            <input type="text" name="txtEddt" class="form-control" uib-datepicker-popup="{{format}}" ng-model="eddt"
+                                is-open="status.canOpenEd" close-text="Close" ng-required="true" datepicker-options="options" readonly="readonly" required />
+                            <span class="input-group-btn">
+                                <button class="btn" type="button" ng-click="openEd()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                            <span ng-show="queryForm.txtStdt.$error.required && queryForm.txtStdt.$dirty">請輸入結束日期</span>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="panel-footer">
-                <button class="btn btn-default" ng-click="StartSearch()"><i class="fa fa-search"></i>查詢</button>
+                <button class="btn btn-default" ng-disabled="queryForm.$invalid" ng-click="StartSearch()"><i class="fa fa-search"></i>查詢</button>
             </div>
         </div>
     </div>
@@ -28,7 +54,7 @@
             <div class="panel-heading">十等份分析表</div>
         </div>
         <div class="panel-body">
-            <table class="table table-hover">
+            <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
                         <td>#</td>
@@ -41,8 +67,8 @@
                 <tbody>
                     <tr ng-repeat="item in datas">
                         <td>{{$index+1}}</td>
-                        <td>{{item.Price}}</td>
-                        <td>{{item.TTotalPrice}}</td>
+                        <td>{{item.Price | currency:"$":0}}</td>
+                        <td>{{item.TTotalPrice | percentage:2}}</td>
                         <td>{{item.TTotalQty}}</td>
                         <td>{{item.TTotalCnt}}</td>
                     </tr>
@@ -53,13 +79,40 @@
             合計:
         </div>
     </div>
+    <!--圖表區-->
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">分析圖表</div>
+            <div class="panel-body">
+                <div google-chart chart="chartObject" style="height:600px;width:100%"></div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 @section scripts{
     <script>
-        var app = angular.module('TenPartitionApp', ['ui.bootstrap']);
+        var app = angular.module('TenPartitionApp', ['ui.bootstrap', 'googlechart']);
         app.controller('TenPartitionCtrl', function ($scope, $http) {
             $scope.IsLoad = false;
+            $scope.format = 'yyyy/MM/dd';
+            $scope.options = {
+                formatYear: 'YY',
+                startingDay: 1
+            };
+            $scope.status = {
+                canOpenSt: false,
+                canOpenEd: false
+            };
+
+            $scope.openSt = function () {
+                $scope.status.canOpenSt = true;
+            }
+
+            $scope.openEd = function () {
+                $scope.status.canOpenEd = true;
+            }
 
             $scope.StartSearch = function () {
                 $scope.IsLoad = true;
@@ -67,17 +120,46 @@
             };
             var GetData = function () {
                 $scope.IsLoad = true;
-                
-                $http.get('/api/TenPartitionAnalysis')
-                .success(function (data) {
+
+                $http.get('/api/TenPartitionAnalysis', { params: { stdt: $scope.stdt, eddt: $scope.eddt } })
+                .success(function (response) {
                     $scope.IsLoad = false;
-                    $scope.datas = data;
+                    $scope.datas = response;
+                    SetChart();
                 })
                 .error(function () {
                     $scope.IsLoad = false;
                     $scope.error = '取得資料錯誤';
                 });
             };
+
+            var SetChart = function () {
+                $scope.chartObject = {};
+                $scope.chartObject.type = "PieChart";
+                $scope.chartDatas = [];
+
+                angular.forEach($scope.datas, function (value, key) {
+                    $scope.chartDatas.push({
+                        c: [
+                            { v: key+1 },
+                            { v: value.Price }
+                        ]
+                    });
+                });
+
+                $scope.chartObject.data = {
+                    "cols": [
+                        { id: "t", label: "Topping", type: "string" },
+                        { id: "s", label: "Slices", type: "number" }
+                    ], "rows": $scope.chartDatas
+                };
+            };
+                        
         });
+        app.filter('percentage', ['$filter', function ($filter) {
+            return function (input, decimal) {
+                return $filter('number')(input * 100, decimal) + '%';
+            };
+        }]);
     </script>
 }

@@ -20,14 +20,10 @@ namespace BLL.Services
         /// 十等份分析表
         /// </summary>
         /// <returns></returns>
-        public List<TenPartitionAnalysisViewModel> GetTenPartitionAnalysis()
-        {
-            string st = "2015/07/01";
-            string ed = "2015/07/31";
-            int s = 1;
-
-            var query1 = (from A in db.STA_DAILY_ITEM_CTGRY_MBR_E
-                         where A.TRAN_DATE.CompareTo(st)>=0 && A.TRAN_DATE.CompareTo(ed)<=0
+        public List<TenPartitionAnalysisViewModel> GetTenPartitionAnalysis(string stdt,string eddt)
+        {   
+            var query = (from A in db.STA_DAILY_ITEM_CTGRY_MBR_E
+                          where A.TRAN_DATE.CompareTo(stdt) >= 0 && A.TRAN_DATE.CompareTo(eddt) <= 0
                          group A by A.MBR_ID into grp
                          select new
                          {
@@ -37,21 +33,14 @@ namespace BLL.Services
                              Qty=grp.Sum(q=>q.PURCHASE_QTY)
                          }).OrderBy(o=>-o.Price).ToList();
 
-            var query2 = from q in query1
-                         select new
-                         {
-                             sn=s++,
-                             Price=q.Price,
-                             Cnt=q.Cnt,
-                             Qty=q.Qty
-                         };
-            int divided = query2.Count() / 10;
-            var TotalPurchase = query2.Sum(p => p.Price);
+
+            int divided = query.Count() / 10;
+            var TotalPurchase = query.Sum(p => p.Price);
             var ls = new List<TenPartitionAnalysisViewModel>();
 
             for (int i = 1; i <=10; i++)
             {
-                var result = query2.Skip((i - 1) * divided).Take(divided).ToList();
+                var result = query.Skip((i - 1) * divided).Take(divided).ToList();
                 TenPartitionAnalysisViewModel model = new TenPartitionAnalysisViewModel()
                 {
                     Price=Convert.ToInt64(result.Sum(p=>p.Price)),
